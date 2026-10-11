@@ -8,7 +8,18 @@ export default [
     languageOptions: {
       ecmaVersion: "latest",
       sourceType: "module",
+    },
+  },
+  {
+    files: ["functions/**/*.js", "eslint.config.js"],
+    languageOptions: {
       globals: globals.node,
+    },
+  },
+  {
+    files: ["public/js/**/*.js"],
+    languageOptions: {
+      globals: globals.browser,
     },
   },
 ];
