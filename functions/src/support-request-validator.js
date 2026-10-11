@@ -5,6 +5,14 @@ const NAME_MAX_LENGTH = 100;
 const HANDLE_PATTERN = /^[a-z0-9._]{1,30}$/;
 
 export class SupportRequestValidator {
+  /**
+   * Validates and normalises the visitor's input.
+   *
+   * @param {unknown} input Parsed request body.
+   * @returns {{ donorName: string, instagramHandle: string }} Trimmed name, and the
+   *   handle without a leading `@`, in lowercase.
+   * @throws {SupportRequestError} `invalid_name` or `invalid_instagram` (HTTP 400).
+   */
   validate(input) {
     return {
       donorName: this.#validateName(input?.name),
@@ -24,9 +32,7 @@ export class SupportRequestValidator {
 
   #validateHandle(value) {
     const handle =
-      typeof value === "string"
-        ? value.trim().replace(/^@/, "").toLowerCase()
-        : "";
+      typeof value === "string" ? value.trim().replace(/^@/, "").toLowerCase() : "";
 
     if (!HANDLE_PATTERN.test(handle)) {
       throw new SupportRequestError("invalid_instagram", 400);

@@ -20,6 +20,7 @@ const turnstileSecretKey = defineSecret("TURNSTILE_SECRET_KEY");
 const notifyFrom = defineString("NOTIFY_FROM");
 const notifyTo = defineString("NOTIFY_TO");
 
+// Built per request because secret and parameter values are only available at runtime.
 function createService() {
   return new SupportRequestService({
     validator: new SupportRequestValidator(),
@@ -33,6 +34,13 @@ function createService() {
   });
 }
 
+/**
+ * `POST /api/support-request` (via the Hosting rewrite).
+ *
+ * Responds `200 { ok: true }` on success, or `{ error: code }` with the matching status:
+ * 400 `invalid_name` / `invalid_instagram`, 403 `turnstile_failed`,
+ * 405 `method_not_allowed`, 500 `server_error`.
+ */
 export const submitSupportRequest = onRequest(
   { secrets: [resendApiKey, turnstileSecretKey] },
   async (request, response) => {

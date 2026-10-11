@@ -3,6 +3,13 @@ const NAME_MIN_LENGTH = 2;
 const NAME_MAX_LENGTH = 100;
 const HANDLE_PATTERN = /^[a-z0-9._]{1,30}$/;
 
+/**
+ * Validates and submits the access request form, and shows the result in the
+ * current language.
+ *
+ * Expects the form to contain inputs named `name`, `instagram` and `website` (honeypot),
+ * a `.cf-turnstile` widget, a submit button and a `[data-form-status]` element.
+ */
 export class SupportForm {
   #form;
   #i18n;
@@ -12,6 +19,10 @@ export class SupportForm {
   #status;
   #turnstileContainer;
 
+  /**
+   * @param {HTMLFormElement} form The access request form.
+   * @param {import("./i18n.js").I18n} i18n Translator for status and error messages.
+   */
   constructor(form, i18n) {
     this.#form = form;
     this.#i18n = i18n;
@@ -22,6 +33,7 @@ export class SupportForm {
     this.#turnstileContainer = form.querySelector(".cf-turnstile");
   }
 
+  /** Takes over form submission from the browser. */
   start() {
     this.#form.addEventListener("submit", (event) => {
       event.preventDefault();
@@ -35,9 +47,7 @@ export class SupportForm {
     const invalidInput = this.#findInvalidInput();
 
     if (invalidInput) {
-      this.#showError(
-        invalidInput === this.#nameInput ? "invalid_name" : "invalid_instagram",
-      );
+      this.#showError(invalidInput === this.#nameInput ? "invalid_name" : "invalid_instagram");
       invalidInput.focus();
       return;
     }
@@ -69,8 +79,7 @@ export class SupportForm {
   #findInvalidInput() {
     const name = this.#nameInput.value.trim();
     const handle = this.#normalizeHandle(this.#instagramInput.value);
-    const nameValid =
-      name.length >= NAME_MIN_LENGTH && name.length <= NAME_MAX_LENGTH;
+    const nameValid = name.length >= NAME_MIN_LENGTH && name.length <= NAME_MAX_LENGTH;
     const handleValid = HANDLE_PATTERN.test(handle);
 
     this.#nameInput.setAttribute("aria-invalid", String(!nameValid));
@@ -109,18 +118,12 @@ export class SupportForm {
 
   #setBusy(busy) {
     this.#submitButton.disabled = busy;
-    this.#setTranslated(
-      this.#submitButton,
-      busy ? "form.submitting" : "form.submit",
-    );
+    this.#setTranslated(this.#submitButton, busy ? "form.submitting" : "form.submit");
   }
 
   #showError(code) {
     const key = `error.${code}`;
-    this.#showStatus(
-      "error",
-      this.#i18n.translate(key) === key ? "error.server_error" : key,
-    );
+    this.#showStatus("error", this.#i18n.translate(key) === key ? "error.server_error" : key);
   }
 
   #showStatus(state, key) {
