@@ -1,0 +1,19 @@
+node_modules/
+
+.firebase/
+firebase-debug.log
+firebase-debug.*.log
+firestore-debug.log
+ui-debug.log
+
+# Functions secrets and local env overrides must never be committed
+.env
+.env.*
+*.local
+.runtimeconfig.json
+.secret.local
+
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
