@@ -1,0 +1,339 @@
+:root {
+  --color-page: #f5f7f4;
+  --color-surface: #ffffff;
+  --color-ink: #17262b;
+  --color-muted: #566669;
+  --color-line: #d3dcd7;
+  --color-accent: #1d7a47;
+  --color-accent-dark: #145c35;
+  --color-accent-tint: #e6f1ea;
+  --color-error: #a3261b;
+
+  --font-heading: Charter, "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+  --space-5: 4rem;
+
+  --measure: 40rem;
+  --radius: 6px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--color-page);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0 0 var(--space-2);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.375rem;
+}
+
+h4 {
+  margin-top: var(--space-3);
+  font-size: 1.125rem;
+}
+
+p {
+  margin: 0 0 var(--space-2);
+}
+
+a {
+  color: var(--color-accent-dark);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.site-header {
+  display: flex;
+  justify-content: flex-end;
+  max-width: calc(var(--measure) + 2 * var(--space-2));
+  margin: 0 auto;
+  padding: var(--space-2);
+}
+
+.language-toggle {
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font: inherit;
+  font-size: 0.9375rem;
+  cursor: pointer;
+}
+
+.language-toggle:hover {
+  border-color: var(--color-muted);
+}
+
+.noscript {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: var(--space-2);
+  background: var(--color-accent-tint);
+}
+
+main,
+.site-footer {
+  max-width: calc(var(--measure) + 2 * var(--space-2));
+  margin: 0 auto;
+  padding: 0 var(--space-2);
+}
+
+.hero {
+  padding: var(--space-4) 0 var(--space-5);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.hero h1 {
+  margin-bottom: var(--space-3);
+  font-size: clamp(2.75rem, 11vw, 4.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
+
+.hero p {
+  max-width: 34rem;
+  font-size: 1.1875rem;
+}
+
+.section {
+  padding: var(--space-5) 0;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.updated {
+  color: var(--color-muted);
+  font-size: 0.9375rem;
+}
+
+.updated span::after {
+  content: " ";
+}
+
+.button {
+  display: inline-block;
+  margin-top: var(--space-1);
+  padding: 0.75rem var(--space-3);
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--color-accent);
+  color: #ffffff;
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: var(--color-accent-dark);
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+#support {
+  max-width: none;
+}
+
+.options {
+  display: grid;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+.card {
+  padding: var(--space-3);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+}
+
+.card--access {
+  border: 2px solid var(--color-accent);
+}
+
+.details {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: var(--space-1) var(--space-2);
+  margin: var(--space-2) 0;
+}
+
+.details dt {
+  color: var(--color-muted);
+}
+
+.details dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+  font-weight: 600;
+}
+
+.small {
+  color: var(--color-muted);
+  font-size: 0.9375rem;
+}
+
+.steps {
+  margin: 0 0 var(--space-3);
+  padding-left: 1.25rem;
+}
+
+.steps li + li {
+  margin-top: var(--space-1);
+}
+
+.support-form {
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-line);
+}
+
+.support-form h4 {
+  margin-top: 0;
+}
+
+.field {
+  margin-bottom: var(--space-2);
+}
+
+.field label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.field input {
+  width: 100%;
+  padding: 0.625rem 0.75rem;
+  border: 1px solid var(--color-muted);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font: inherit;
+}
+
+.field input[aria-invalid="true"] {
+  border-color: var(--color-error);
+}
+
+.hint {
+  margin: 0.25rem 0 0;
+  color: var(--color-muted);
+  font-size: 0.9375rem;
+}
+
+/* Kept off-screen rather than display:none, because some bots skip fields they can tell are hidden. */
+.honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.cf-turnstile {
+  margin: var(--space-2) 0;
+}
+
+.notice {
+  padding: var(--space-1) var(--space-2);
+  border-left: 3px solid var(--color-accent);
+  background: var(--color-accent-tint);
+  font-size: 0.9375rem;
+}
+
+.form-status:empty {
+  display: none;
+}
+
+.form-status {
+  margin-top: var(--space-2);
+  font-weight: 600;
+}
+
+.form-status[data-state="error"] {
+  color: var(--color-error);
+}
+
+.form-status[data-state="success"] {
+  color: var(--color-accent-dark);
+}
+
+.site-footer {
+  padding-top: var(--space-4);
+  padding-bottom: var(--space-5);
+  color: var(--color-muted);
+  font-size: 0.9375rem;
+}
+
+.site-footer section {
+  max-width: var(--measure);
+  margin-bottom: var(--space-3);
+}
+
+.site-footer h2 {
+  margin-bottom: var(--space-1);
+  color: var(--color-ink);
+  font-size: 1.125rem;
+}
+
+@media (min-width: 52rem) {
+  main,
+  .site-footer,
+  .site-header {
+    max-width: 60rem;
+  }
+
+  .hero,
+  .section:not(#support) {
+    max-width: calc(var(--measure) + 2 * var(--space-2));
+  }
+
+  .options {
+    grid-template-columns: 1fr 1.25fr;
+    align-items: start;
+  }
+}
