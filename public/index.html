@@ -7,7 +7,11 @@
     <meta name="description" data-i18n-attr="content:meta.description" />
     <link rel="stylesheet" href="css/styles.css" />
     <script type="module" src="js/main.js"></script>
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <script
+      src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+      async
+      defer
+    ></script>
   </head>
   <body>
     <header class="site-header">
@@ -126,21 +130,43 @@
                   required
                   aria-describedby="instagram-hint"
                 />
-                <p id="instagram-hint" class="hint" data-i18n="form.instagramHint"></p>
+                <p
+                  id="instagram-hint"
+                  class="hint"
+                  data-i18n="form.instagramHint"
+                ></p>
               </div>
 
               <div class="honeypot" aria-hidden="true">
                 <label for="website" data-i18n="form.honeypotLabel"></label>
-                <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+                <input
+                  id="website"
+                  name="website"
+                  type="text"
+                  tabindex="-1"
+                  autocomplete="off"
+                />
               </div>
 
-              <div class="cf-turnstile" data-sitekey="0x4AAAAAAFT2sJYOgnWGYBDU"></div>
+              <div
+                class="cf-turnstile"
+                data-sitekey="0x4AAAAAAFT2sJYOgnWGYBDU"
+              ></div>
 
               <p class="notice" data-i18n="form.notice"></p>
 
-              <button type="submit" class="button" data-i18n="form.submit"></button>
+              <button
+                type="submit"
+                class="button"
+                data-i18n="form.submit"
+              ></button>
 
-              <p class="form-status" role="status" aria-live="polite" data-form-status></p>
+              <p
+                class="form-status"
+                role="status"
+                aria-live="polite"
+                data-form-status
+              ></p>
             </form>
           </article>
         </div>
