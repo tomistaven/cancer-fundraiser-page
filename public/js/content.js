@@ -2,24 +2,20 @@
 export const content = Object.freeze({
   fi: Object.freeze({
     "meta.title": "Tuomaksen syöpämatka",
-    "meta.description":
-      "Tue Tuomas Lappalaisen immunologista syöpähoitoa Saksassa.",
+    "meta.description": "Tue Tuomas Lappalaisen immunologista syöpähoitoa Saksassa.",
     "language.toggle": "In English",
     "language.toggleLabel": "Vaihda kieli englanniksi",
 
     "hero.title": "Tuomaksen syöpämatka",
-    "hero.intro":
-      "[TÄYDENNETÄÄN: lyhyt esittely Tuomaksesta ja keräyksen tarkoituksesta.]",
+    "hero.intro": "[TÄYDENNETÄÄN: lyhyt esittely Tuomaksesta ja keräyksen tarkoituksesta.]",
     "hero.cta": "Näin voit auttaa",
     "hero.photoAlt": "Tuomas Lappalainen",
 
     "diagnosis.heading": "Diagnoosi",
-    "diagnosis.body":
-      "[TÄYDENNETÄÄN: sappitiesyöpä (kolangiokarsinooma) selkokielellä ja Tuomaksen tilanne. Tiedot tarkistetaan Tuomakselta.]",
+    "diagnosis.body": "[TÄYDENNETÄÄN: sappitiesyöpä (kolangiokarsinooma) selkokielellä ja Tuomaksen tilanne. Tiedot tarkistetaan Tuomakselta.]",
 
     "treatment.heading": "Hoito Saksassa",
-    "treatment.body":
-      "[TÄYDENNETÄÄN: hoidon nimi, hoitopaikka ja mitä hoito sisältää.]",
+    "treatment.body": "[TÄYDENNETÄÄN: hoidon nimi, hoitopaikka ja mitä hoito sisältää.]",
     "treatment.costsHeading": "Kustannukset",
     "treatment.costs": "[TÄYDENNETÄÄN: kustannuserittely ja tavoitesumma.]",
 
@@ -29,38 +25,33 @@ export const content = Object.freeze({
     "status.updatedDate": "[pp.kk.vvvv]",
 
     "support.heading": "Näin voit auttaa",
-    "support.intro":
-      "Voit auttaa kahdella erillisellä tavalla. Lahjoitus ja maksullinen seuraaminen menevät eri tileille.",
+    "support.intro": "Voit auttaa kahdella erillisellä tavalla. Lahjoitus ja maksullinen seuraaminen menevät eri tileille.",
     "support.period": "Keräysaika 12.10.2026–11.1.2027.",
 
     "donation.heading": "Lahjoitus",
-    "donation.body":
-      "Lahjoita haluamasi summa. Lahjoitus on vastikkeeton: siitä ei saa mitään vastineeksi, eikä se anna pääsyä Instagram-seurantaan.",
+    "donation.body": "Lahjoita haluamasi summa. Lahjoitus on vastikkeeton: siitä ei saa mitään vastineeksi, eikä se anna pääsyä Instagram-seurantaan.",
     "donation.accountLabel": "Tilinumero",
-    "donation.account": "[TÄYDENNETÄÄN: lahjoitustilin IBAN]",
+    "donation.account": "FI55 5500 3920 3042 33",
     "donation.recipientLabel": "Saaja",
-    "donation.recipient": "[TÄYDENNETÄÄN]",
+    "donation.recipient": "Tuomas Lappalainen",
     "donation.organizer": "[TÄYDENNETÄÄN: keräyksen järjestäjän tiedot]",
 
     "access.heading": "Seuraa Tuomaksen matkaa (30 €)",
-    "access.body":
-      "Maksamalla 30 € pääset seuraamaan Tuomaksen hoitomatkaa hänen Instagramin Close Friends -listallaan. Tämä on vastikkeellinen keräys.",
+    "access.body": "Maksamalla 30 € pääset seuraamaan Tuomaksen hoitomatkaa hänen Instagramin Close Friends -listallaan. Tämä on vastikkeellinen keräys.",
     "access.accountLabel": "Tilinumero",
-    "access.account": "[TÄYDENNETÄÄN: maksullisen pääsyn tilin IBAN]",
+    "access.account": "FI77 5500 3920 3042 25",
     "access.recipientLabel": "Saaja",
-    "access.recipient": "[TÄYDENNETÄÄN]",
+    "access.recipient": "Tuomas Lappalainen",
     "access.amountLabel": "Summa",
     "access.amount": "30 €",
     "access.messageLabel": "Viesti",
-    "access.message":
-      'Oma nimesi, "vastikkeellinen keräys Tuomas Lappalaiselle" ja Instagram-käyttäjänimesi',
+    "access.message": "Oma nimesi, \"vastikkeellinen keräys Tuomas Lappalaiselle\" ja Instagram-käyttäjänimesi",
     "access.mobilepayLabel": "MobilePay",
     "access.mobilepay": "[TÄYDENNETÄÄN: MobilePay-tiedot]",
     "access.stepsHeading": "Näin se toimii",
     "access.step1": "Maksa 30 € pankkisiirrolla tai MobilePaylla.",
     "access.step2": "Täytä alla oleva lomake.",
-    "access.step3":
-      "Tuomas tarkistaa maksun tiliotteelta ja lisää sinut Close Friends -listalle.",
+    "access.step3": "Tuomas tarkistaa maksun tiliotteelta ja lisää sinut Close Friends -listalle.",
 
     "form.heading": "Pyydä pääsyä",
     "form.nameLabel": "Nimi",
@@ -68,53 +59,43 @@ export const content = Object.freeze({
     "form.instagramLabel": "Instagram-käyttäjänimi",
     "form.instagramHint": "Esimerkiksi @kayttajanimi",
     "form.honeypotLabel": "Jätä tämä kenttä tyhjäksi",
-    "form.notice":
-      "Lomakkeen lähettäminen ei vahvista maksua. Tuomas tarkistaa maksun ennen kuin lisää sinut.",
+    "form.notice": "Lomakkeen lähettäminen ei vahvista maksua. Tuomas tarkistaa maksun ennen kuin lisää sinut.",
     "form.submit": "Lähetä",
     "form.submitting": "Lähetetään…",
-    "form.success":
-      "Kiitos! Pyyntösi on vastaanotettu. Tuomas lisää sinut, kun maksu näkyy tiliotteella.",
+    "form.success": "Kiitos! Pyyntösi on vastaanotettu. Tuomas lisää sinut, kun maksu näkyy tiliotteella.",
 
     "error.invalid_name": "Kirjoita nimesi (2–100 merkkiä).",
-    "error.invalid_instagram":
-      "Tarkista Instagram-käyttäjänimi. Sallittuja ovat kirjaimet, numerot, piste ja alaviiva, enintään 30 merkkiä.",
-    "error.turnstile_failed":
-      "Varmistus epäonnistui. Lataa sivu uudelleen ja yritä uudestaan.",
+    "error.invalid_instagram": "Tarkista Instagram-käyttäjänimi. Sallittuja ovat kirjaimet, numerot, piste ja alaviiva, enintään 30 merkkiä.",
+    "error.turnstile_failed": "Varmistus epäonnistui. Lataa sivu uudelleen ja yritä uudestaan.",
     "error.method_not_allowed": "Pyyntöä ei voitu käsitellä. Yritä uudelleen.",
     "error.server_error": "Jokin meni vikaan. Yritä hetken päästä uudelleen.",
-    "error.network":
-      "Yhteys epäonnistui. Tarkista verkkoyhteys ja yritä uudelleen.",
+    "error.network": "Yhteys epäonnistui. Tarkista verkkoyhteys ja yritä uudelleen.",
 
     "footer.organizerHeading": "Järjestäjä",
     "footer.organizer": "[TÄYDENNETÄÄN: järjestäjän nimi ja yhteystiedot]",
     "footer.instagramLabel": "Tuomas Instagramissa",
     "footer.privacyHeading": "Tietosuoja",
-    "footer.privacy":
-      "Lomakkeella kerätään vain nimesi ja Instagram-käyttäjänimesi, jotta Tuomas voi yhdistää maksusi ja lisätä sinut Close Friends -listalle. Tiedot tallennetaan Googlen Firebase-palveluun EU:ssa, ja Tuomas saa ne sähköpostiinsa Resend-palvelun kautta. Resend säilyttää lähetetyt viestit 30 päivää. Tiedot poistetaan automaattisesti 11.2.2027. Lomake käyttää Cloudflare Turnstile -varmistusta roskapostin estämiseksi. Sivusto ei käytä analytiikkaa.",
+    "footer.privacy": "Lomakkeella kerätään vain nimesi ja Instagram-käyttäjänimesi, jotta Tuomas voi yhdistää maksusi ja lisätä sinut Close Friends -listalle. Tiedot tallennetaan Googlen Firebase-palveluun EU:ssa, ja Tuomas saa ne sähköpostiinsa Resend-palvelun kautta. Resend säilyttää lähetetyt viestit 30 päivää. Tiedot poistetaan automaattisesti 11.2.2027. Lomake käyttää Cloudflare Turnstile -varmistusta roskapostin estämiseksi. Sivusto ei käytä analytiikkaa.",
     "footer.updatedLabel": "Sivu päivitetty",
     "footer.updatedDate": "[pp.kk.vvvv]",
   }),
 
   en: Object.freeze({
     "meta.title": "Tuomas' cancer journey",
-    "meta.description":
-      "Support Tuomas Lappalainen's immunological cancer treatment in Germany.",
+    "meta.description": "Support Tuomas Lappalainen's immunological cancer treatment in Germany.",
     "language.toggle": "Suomeksi",
     "language.toggleLabel": "Switch language to Finnish",
 
     "hero.title": "Tuomas' cancer journey",
-    "hero.intro":
-      "[TO BE ADDED: a short introduction to Tuomas and the purpose of the collection.]",
+    "hero.intro": "[TO BE ADDED: a short introduction to Tuomas and the purpose of the collection.]",
     "hero.cta": "How you can help",
     "hero.photoAlt": "Tuomas Lappalainen",
 
     "diagnosis.heading": "Diagnosis",
-    "diagnosis.body":
-      "[TO BE ADDED: bile duct cancer (cholangiocarcinoma) in plain language and Tuomas' situation. To be verified with Tuomas.]",
+    "diagnosis.body": "[TO BE ADDED: bile duct cancer (cholangiocarcinoma) in plain language and Tuomas' situation. To be verified with Tuomas.]",
 
     "treatment.heading": "Treatment in Germany",
-    "treatment.body":
-      "[TO BE ADDED: treatment name, institution and what the treatment involves.]",
+    "treatment.body": "[TO BE ADDED: treatment name, institution and what the treatment involves.]",
     "treatment.costsHeading": "Costs",
     "treatment.costs": "[TO BE ADDED: cost breakdown and target amount.]",
 
@@ -124,38 +105,33 @@ export const content = Object.freeze({
     "status.updatedDate": "[dd.mm.yyyy]",
 
     "support.heading": "How you can help",
-    "support.intro":
-      "There are two separate ways to help. Donations and paid access go to different accounts.",
+    "support.intro": "There are two separate ways to help. Donations and paid access go to different accounts.",
     "support.period": "Collection period 12.10.2026–11.1.2027.",
 
     "donation.heading": "Donation",
-    "donation.body":
-      "Donate any amount you like. A donation gives nothing in return and does not give access to the Instagram updates.",
+    "donation.body": "Donate any amount you like. A donation gives nothing in return and does not give access to the Instagram updates.",
     "donation.accountLabel": "Account number",
-    "donation.account": "[TO BE ADDED: donation account IBAN]",
+    "donation.account": "FI55 5500 3920 3042 33",
     "donation.recipientLabel": "Recipient",
-    "donation.recipient": "[TO BE ADDED]",
+    "donation.recipient": "Tuomas Lappalainen",
     "donation.organizer": "[TO BE ADDED: collection organizer details]",
 
     "access.heading": "Follow Tuomas' journey (30 €)",
-    "access.body":
-      "For 30 € you can follow Tuomas' treatment journey on his Instagram Close Friends list. This is a paid collection with access in return.",
+    "access.body": "For 30 € you can follow Tuomas' treatment journey on his Instagram Close Friends list. This is a paid collection with access in return.",
     "access.accountLabel": "Account number",
-    "access.account": "[TO BE ADDED: paid access account IBAN]",
+    "access.account": "FI77 5500 3920 3042 25",
     "access.recipientLabel": "Recipient",
-    "access.recipient": "[TO BE ADDED]",
+    "access.recipient": "Tuomas Lappalainen",
     "access.amountLabel": "Amount",
     "access.amount": "30 €",
     "access.messageLabel": "Message",
-    "access.message":
-      'Your name, "vastikkeellinen keräys Tuomas Lappalaiselle" and your Instagram username',
+    "access.message": "Your name, \"vastikkeellinen keräys Tuomas Lappalaiselle\" and your Instagram username",
     "access.mobilepayLabel": "MobilePay",
     "access.mobilepay": "[TO BE ADDED: MobilePay details]",
     "access.stepsHeading": "How it works",
     "access.step1": "Pay 30 € by bank transfer or MobilePay.",
     "access.step2": "Fill in the form below.",
-    "access.step3":
-      "Tuomas checks the payment on his bank statement and adds you to his Close Friends list.",
+    "access.step3": "Tuomas checks the payment on his bank statement and adds you to his Close Friends list.",
 
     "form.heading": "Request access",
     "form.nameLabel": "Name",
@@ -163,20 +139,15 @@ export const content = Object.freeze({
     "form.instagramLabel": "Instagram username",
     "form.instagramHint": "For example @username",
     "form.honeypotLabel": "Leave this field empty",
-    "form.notice":
-      "Submitting the form does not confirm your payment. Tuomas checks the payment before adding you.",
+    "form.notice": "Submitting the form does not confirm your payment. Tuomas checks the payment before adding you.",
     "form.submit": "Send",
     "form.submitting": "Sending…",
-    "form.success":
-      "Thank you! Your request has been received. Tuomas will add you once the payment shows on his bank statement.",
+    "form.success": "Thank you! Your request has been received. Tuomas will add you once the payment shows on his bank statement.",
 
     "error.invalid_name": "Enter your name (2–100 characters).",
-    "error.invalid_instagram":
-      "Check your Instagram username. Letters, numbers, dots and underscores are allowed, up to 30 characters.",
-    "error.turnstile_failed":
-      "Verification failed. Reload the page and try again.",
-    "error.method_not_allowed":
-      "The request could not be processed. Please try again.",
+    "error.invalid_instagram": "Check your Instagram username. Letters, numbers, dots and underscores are allowed, up to 30 characters.",
+    "error.turnstile_failed": "Verification failed. Reload the page and try again.",
+    "error.method_not_allowed": "The request could not be processed. Please try again.",
     "error.server_error": "Something went wrong. Please try again in a moment.",
     "error.network": "Connection failed. Check your network and try again.",
 
@@ -184,8 +155,7 @@ export const content = Object.freeze({
     "footer.organizer": "[TO BE ADDED: organizer name and contact details]",
     "footer.instagramLabel": "Tuomas on Instagram",
     "footer.privacyHeading": "Privacy",
-    "footer.privacy":
-      "The form collects only your name and Instagram username, so Tuomas can match your payment and add you to his Close Friends list. The data is stored in Google's Firebase service in the EU, and Tuomas receives it by email through the Resend service. Resend keeps sent messages for 30 days. The data is deleted automatically on 11.2.2027. The form uses Cloudflare Turnstile to block spam. The site uses no analytics.",
+    "footer.privacy": "The form collects only your name and Instagram username, so Tuomas can match your payment and add you to his Close Friends list. The data is stored in Google's Firebase service in the EU, and Tuomas receives it by email through the Resend service. Resend keeps sent messages for 30 days. The data is deleted automatically on 11.2.2027. The form uses Cloudflare Turnstile to block spam. The site uses no analytics.",
     "footer.updatedLabel": "Page updated",
     "footer.updatedDate": "[dd.mm.yyyy]",
   }),
