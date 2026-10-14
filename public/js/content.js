@@ -22,6 +22,7 @@ export const content = Object.freeze({
     "treatment.body": "[TÄYDENNETÄÄN: hoidon nimi, hoitopaikka ja mitä hoito sisältää.]",
     "treatment.costsHeading": "Kustannukset",
     "treatment.costs": "[TÄYDENNETÄÄN: kustannuserittely ja tavoitesumma.]",
+    "treatment.studyLink": "Lue tutkimuksesta",
 
     "status.heading": "Tilanne nyt",
     "status.body": "[TÄYDENNETÄÄN: lyhyt ajankohtainen päivitys.]",
@@ -31,6 +32,8 @@ export const content = Object.freeze({
     "support.heading": "Näin voit auttaa",
     "support.intro": "Voit auttaa kahdella erillisellä tavalla. Lahjoitus ja maksullinen seuraaminen menevät eri tileille.",
     "support.period": "Keräysaika 12.10.2026–11.1.2027.",
+    "support.tabDonation": "Lahjoitus",
+    "support.tabAccess": "Seuraa matkaa\u00a0(30\u00a0€)",
 
     "donation.heading": "Lahjoitus",
     "donation.body": "Lahjoita haluamasi summa. Lahjoitus on vastikkeeton: siitä ei saa mitään vastineeksi, eikä se anna pääsyä Instagram-seurantaan.",
@@ -40,7 +43,7 @@ export const content = Object.freeze({
     "donation.recipient": "Tuomas Lappalainen",
     "donation.organizer": "[TÄYDENNETÄÄN: keräyksen järjestäjän tiedot]",
 
-    "access.heading": "Seuraa Tuomaksen matkaa (30 €)",
+    "access.heading": "Seuraa Tuomaksen matkaa\u00a0(30\u00a0€)",
     "access.body": "Maksamalla 30 € pääset seuraamaan Tuomaksen hoitomatkaa hänen Instagramin Close Friends -listallaan. Tämä on vastikkeellinen keräys.",
     "access.accountLabel": "Tilinumero",
     "access.account": "FI77 5500 3920 3042 25",
@@ -49,7 +52,7 @@ export const content = Object.freeze({
     "access.amountLabel": "Summa",
     "access.amount": "30 €",
     "access.stepsHeading": "Näin se toimii",
-    "access.step1": "Muodosta maksun viesti alla olevilla tiedoilla ja kopioi se.",
+    "access.step1": "Muodosta maksun viesti nimelläsi ja Instagram-käyttäjänimelläsi ja kopioi se.",
     "access.step2": "Maksa 30 € tilisiirrolla yllä olevalle tilille ja liitä viesti maksun viestikenttään.",
     "access.step3": "Tuomas lisää sinut Close Friends -listalle, kun maksu näkyy hänen tiliotteellaan.",
 
@@ -96,6 +99,7 @@ export const content = Object.freeze({
     "treatment.body": "[TO BE ADDED: treatment name, institution and what the treatment involves.]",
     "treatment.costsHeading": "Costs",
     "treatment.costs": "[TO BE ADDED: cost breakdown and target amount.]",
+    "treatment.studyLink": "Read about the study",
 
     "status.heading": "Current status",
     "status.body": "[TO BE ADDED: a short current update.]",
@@ -105,6 +109,8 @@ export const content = Object.freeze({
     "support.heading": "How you can help",
     "support.intro": "There are two separate ways to help. Donations and paid access go to different accounts.",
     "support.period": "Collection period 12.10.2026–11.1.2027.",
+    "support.tabDonation": "Donate",
+    "support.tabAccess": "Follow the journey\u00a0(30\u00a0€)",
 
     "donation.heading": "Donation",
     "donation.body": "Donate any amount you like. A donation gives nothing in return and does not give access to the Instagram updates.",
@@ -114,7 +120,7 @@ export const content = Object.freeze({
     "donation.recipient": "Tuomas Lappalainen",
     "donation.organizer": "[TO BE ADDED: collection organizer details]",
 
-    "access.heading": "Follow Tuomas' journey (30 €)",
+    "access.heading": "Follow Tuomas' journey\u00a0(30\u00a0€)",
     "access.body": "For 30 € you can follow Tuomas' treatment journey on his Instagram Close Friends list. This is a paid collection with access in return.",
     "access.accountLabel": "Account number",
     "access.account": "FI77 5500 3920 3042 25",
@@ -123,7 +129,7 @@ export const content = Object.freeze({
     "access.amountLabel": "Amount",
     "access.amount": "30 €",
     "access.stepsHeading": "How it works",
-    "access.step1": "Create your payment message below and copy it.",
+    "access.step1": "Create your payment message from your name and Instagram username, and copy it.",
     "access.step2": "Pay 30 € by bank transfer to the account above and paste the message into the payment's message field.",
     "access.step3": "Tuomas adds you to his Close Friends list once the payment shows on his bank statement.",
 

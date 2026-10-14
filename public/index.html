@@ -27,175 +27,301 @@
 
     <main>
       <section class="hero" aria-labelledby="hero-title">
-        <h1 id="hero-title" data-i18n="hero.title"></h1>
-        <p data-i18n="hero.intro"></p>
-        <a class="button" href="#support" data-i18n="hero.cta"></a>
+        <div class="hero-content">
+          <h1 id="hero-title" data-i18n="hero.title"></h1>
+          <p data-i18n="hero.intro"></p>
+          <a class="button" href="#support" data-i18n="hero.cta"></a>
+        </div>
+
+        <figure class="hero-media" hidden>
+          <img class="hero-photo" data-i18n-attr="alt:hero.photoAlt" />
+        </figure>
       </section>
 
-      <section class="section" aria-labelledby="diagnosis-title">
-        <h2 id="diagnosis-title" data-i18n="diagnosis.heading"></h2>
-        <p data-i18n="diagnosis.body"></p>
-      </section>
+      <div class="story" data-snap-carousel>
+        <div class="story-tabs" data-carousel-tabs hidden>
+          <button
+            type="button"
+            class="pill-tab"
+            data-carousel-tab="diagnosis"
+            data-i18n="diagnosis.heading"
+          ></button>
+          <button
+            type="button"
+            class="pill-tab"
+            data-carousel-tab="treatment"
+            data-i18n="treatment.heading"
+          ></button>
+          <button
+            type="button"
+            class="pill-tab"
+            data-carousel-tab="status"
+            data-i18n="status.heading"
+          ></button>
+        </div>
 
-      <section class="section" aria-labelledby="treatment-title">
-        <h2 id="treatment-title" data-i18n="treatment.heading"></h2>
-        <p data-i18n="treatment.body"></p>
-        <h3 data-i18n="treatment.costsHeading"></h3>
-        <p data-i18n="treatment.costs"></p>
-      </section>
+        <div class="story-track" data-carousel-track>
+          <section
+            id="diagnosis"
+            class="story-card"
+            aria-labelledby="diagnosis-title"
+          >
+            <h2 id="diagnosis-title" data-i18n="diagnosis.heading"></h2>
+            <p data-i18n="diagnosis.body"></p>
+          </section>
 
-      <section class="section" aria-labelledby="status-title">
-        <h2 id="status-title" data-i18n="status.heading"></h2>
-        <p data-i18n="status.body"></p>
-        <p class="updated">
-          <span data-i18n="status.updatedLabel"></span>
-          <time data-i18n="status.updatedDate"></time>
-        </p>
-      </section>
+          <section
+            id="treatment"
+            class="story-card"
+            aria-labelledby="treatment-title"
+          >
+            <h2 id="treatment-title" data-i18n="treatment.heading"></h2>
+            <p data-i18n="treatment.body"></p>
+            <div class="cost-callout">
+              <h3 data-i18n="treatment.costsHeading"></h3>
+              <p data-i18n="treatment.costs"></p>
+            </div>
+            <a
+              class="study-link"
+              href=""
+              rel="noopener"
+              data-i18n="treatment.studyLink"
+              hidden
+            ></a>
+          </section>
 
-      <section id="support" class="section" aria-labelledby="support-title">
-        <h2 id="support-title" data-i18n="support.heading"></h2>
-        <p data-i18n="support.intro"></p>
-        <p data-i18n="support.period"></p>
+          <section
+            id="status"
+            class="story-card story-card--status"
+            aria-labelledby="status-title"
+          >
+            <p class="badge">
+              <span data-i18n="status.updatedLabel"></span>
+              <time data-i18n="status.updatedDate"></time>
+            </p>
+            <h2 id="status-title" data-i18n="status.heading"></h2>
+            <p data-i18n="status.body"></p>
+          </section>
+        </div>
+      </div>
 
-        <div class="options">
-          <article class="card" aria-labelledby="donation-title">
-            <h3 id="donation-title" data-i18n="donation.heading"></h3>
-            <p data-i18n="donation.body"></p>
-            <dl class="details">
-              <dt id="donation-account-label" data-i18n="donation.accountLabel"></dt>
-              <dd class="copyable">
-                <span id="donation-account" data-i18n="donation.account"></span>
-                <button
-                  type="button"
-                  class="copy-button"
-                  data-copy-target="donation-account"
-                  aria-describedby="donation-account-label"
-                  data-i18n="copy.label"
-                ></button>
-              </dd>
-              <dt id="donation-recipient-label" data-i18n="donation.recipientLabel"></dt>
-              <dd class="copyable">
-                <span id="donation-recipient" data-i18n="donation.recipient"></span>
-                <button
-                  type="button"
-                  class="copy-button"
-                  data-copy-target="donation-recipient"
-                  aria-describedby="donation-recipient-label"
-                  data-i18n="copy.label"
-                ></button>
-              </dd>
+      <section id="support" class="support" aria-labelledby="support-title">
+        <div class="support-header">
+          <h2 id="support-title" data-i18n="support.heading"></h2>
+          <p class="support-intro" data-i18n="support.intro"></p>
+          <p class="support-period" data-i18n="support.period"></p>
+        </div>
+
+        <div class="support-options" data-tab-switcher>
+          <div class="support-tabs" data-tablist hidden>
+            <button
+              type="button"
+              id="tab-donation"
+              class="pill-tab"
+              data-tab="donation-panel"
+              data-i18n="support.tabDonation"
+            ></button>
+            <button
+              type="button"
+              id="tab-access"
+              class="pill-tab"
+              data-tab="access-panel"
+              data-i18n="support.tabAccess"
+            ></button>
+          </div>
+
+          <article
+            id="donation-panel"
+            class="card card--donation"
+            aria-labelledby="donation-title"
+          >
+            <div class="donation-text">
+              <h3 id="donation-title" data-i18n="donation.heading"></h3>
+              <p data-i18n="donation.body"></p>
+            </div>
+
+            <dl class="details details--inline">
+              <div class="detail-row">
+                <dt
+                  id="donation-account-label"
+                  data-i18n="donation.accountLabel"
+                ></dt>
+                <dd class="copyable">
+                  <span
+                    id="donation-account"
+                    class="mono-value"
+                    data-i18n="donation.account"
+                  ></span>
+                  <button
+                    type="button"
+                    class="copy-button"
+                    data-copy-target="donation-account"
+                    aria-describedby="donation-account-label"
+                    data-i18n="copy.label"
+                  ></button>
+                </dd>
+              </div>
+              <div class="detail-row">
+                <dt
+                  id="donation-recipient-label"
+                  data-i18n="donation.recipientLabel"
+                ></dt>
+                <dd class="copyable">
+                  <span
+                    id="donation-recipient"
+                    data-i18n="donation.recipient"
+                  ></span>
+                  <button
+                    type="button"
+                    class="copy-button"
+                    data-copy-target="donation-recipient"
+                    aria-describedby="donation-recipient-label"
+                    data-i18n="copy.label"
+                  ></button>
+                </dd>
+              </div>
             </dl>
+
             <p class="small" data-i18n="donation.organizer"></p>
           </article>
 
-          <article class="card card--access" aria-labelledby="access-title">
-            <h3 id="access-title" data-i18n="access.heading"></h3>
-            <p data-i18n="access.body"></p>
-            <dl class="details">
-              <dt data-i18n="access.amountLabel"></dt>
-              <dd data-i18n="access.amount"></dd>
-              <dt id="access-account-label" data-i18n="access.accountLabel"></dt>
-              <dd class="copyable">
-                <span id="access-account" data-i18n="access.account"></span>
-                <button
-                  type="button"
-                  class="copy-button"
-                  data-copy-target="access-account"
-                  aria-describedby="access-account-label"
-                  data-i18n="copy.label"
-                ></button>
-              </dd>
-              <dt id="access-recipient-label" data-i18n="access.recipientLabel"></dt>
-              <dd class="copyable">
-                <span id="access-recipient" data-i18n="access.recipient"></span>
-                <button
-                  type="button"
-                  class="copy-button"
-                  data-copy-target="access-recipient"
-                  aria-describedby="access-recipient-label"
-                  data-i18n="copy.label"
-                ></button>
-              </dd>
-            </dl>
+          <article
+            id="access-panel"
+            class="card card--access"
+            aria-labelledby="access-title"
+          >
+            <div class="access-grid">
+              <div class="access-info">
+                <h3 id="access-title" data-i18n="access.heading"></h3>
+                <p data-i18n="access.body"></p>
 
-            <h4 data-i18n="access.stepsHeading"></h4>
-            <ol class="steps">
-              <li data-i18n="access.step1"></li>
-              <li data-i18n="access.step2"></li>
-              <li data-i18n="access.step3"></li>
-            </ol>
+                <dl class="details">
+                  <div class="detail-row">
+                    <dt data-i18n="access.amountLabel"></dt>
+                    <dd class="amount" data-i18n="access.amount"></dd>
+                  </div>
+                  <div class="detail-row">
+                    <dt
+                      id="access-account-label"
+                      data-i18n="access.accountLabel"
+                    ></dt>
+                    <dd class="copyable">
+                      <span
+                        id="access-account"
+                        class="mono-value"
+                        data-i18n="access.account"
+                      ></span>
+                      <button
+                        type="button"
+                        class="copy-button"
+                        data-copy-target="access-account"
+                        aria-describedby="access-account-label"
+                        data-i18n="copy.label"
+                      ></button>
+                    </dd>
+                  </div>
+                  <div class="detail-row">
+                    <dt
+                      id="access-recipient-label"
+                      data-i18n="access.recipientLabel"
+                    ></dt>
+                    <dd class="copyable">
+                      <span
+                        id="access-recipient"
+                        data-i18n="access.recipient"
+                      ></span>
+                      <button
+                        type="button"
+                        class="copy-button"
+                        data-copy-target="access-recipient"
+                        aria-describedby="access-recipient-label"
+                        data-i18n="copy.label"
+                      ></button>
+                    </dd>
+                  </div>
+                </dl>
 
-            <div class="message-builder" data-payment-message>
-              <h4 data-i18n="message.heading"></h4>
-
-              <div class="field">
-                <label for="payer-name" data-i18n="message.nameLabel"></label>
-                <input
-                  id="payer-name"
-                  name="name"
-                  type="text"
-                  autocomplete="name"
-                  maxlength="60"
-                  aria-describedby="payer-name-hint message-error"
-                />
-                <p
-                  id="payer-name-hint"
-                  class="hint"
-                  data-i18n="message.nameHint"
-                ></p>
+                <div class="steps-box">
+                  <h4 data-i18n="access.stepsHeading"></h4>
+                  <ol class="steps">
+                    <li data-i18n="access.step1"></li>
+                    <li data-i18n="access.step2"></li>
+                    <li data-i18n="access.step3"></li>
+                  </ol>
+                </div>
               </div>
 
-              <div class="field">
-                <label
-                  for="payer-instagram"
-                  data-i18n="message.instagramLabel"
-                ></label>
-                <input
-                  id="payer-instagram"
-                  name="instagram"
-                  type="text"
-                  autocomplete="off"
-                  autocapitalize="none"
-                  spellcheck="false"
-                  maxlength="31"
-                  aria-describedby="payer-instagram-hint message-error"
-                />
+              <div class="message-builder" data-payment-message>
+                <h4 data-i18n="message.heading"></h4>
+
+                <div class="field">
+                  <label for="payer-name" data-i18n="message.nameLabel"></label>
+                  <input
+                    id="payer-name"
+                    name="name"
+                    type="text"
+                    autocomplete="name"
+                    maxlength="60"
+                    aria-describedby="payer-name-hint message-error"
+                  />
+                  <p
+                    id="payer-name-hint"
+                    class="hint"
+                    data-i18n="message.nameHint"
+                  ></p>
+                </div>
+
+                <div class="field">
+                  <label
+                    for="payer-instagram"
+                    data-i18n="message.instagramLabel"
+                  ></label>
+                  <input
+                    id="payer-instagram"
+                    name="instagram"
+                    type="text"
+                    autocomplete="off"
+                    autocapitalize="none"
+                    spellcheck="false"
+                    maxlength="31"
+                    aria-describedby="payer-instagram-hint message-error"
+                  />
+                  <p
+                    id="payer-instagram-hint"
+                    class="hint"
+                    data-i18n="message.instagramHint"
+                  ></p>
+                </div>
+
                 <p
-                  id="payer-instagram-hint"
-                  class="hint"
-                  data-i18n="message.instagramHint"
+                  id="message-error"
+                  class="field-error"
+                  aria-live="polite"
+                  data-message-error
                 ></p>
+
+                <p
+                  id="message-output-label"
+                  class="message-label"
+                  data-i18n="message.outputLabel"
+                ></p>
+                <p
+                  id="message-output"
+                  class="message-output"
+                  aria-labelledby="message-output-label"
+                  data-message-output
+                ></p>
+                <button
+                  type="button"
+                  class="button button--full"
+                  data-copy-target="message-output"
+                  aria-describedby="message-output-label"
+                  data-i18n="copy.label"
+                  disabled
+                ></button>
+
+                <p class="notice" data-i18n="message.fallback"></p>
               </div>
-
-              <p
-                id="message-error"
-                class="field-error"
-                aria-live="polite"
-                data-message-error
-              ></p>
-
-              <p
-                id="message-output-label"
-                class="message-label"
-                data-i18n="message.outputLabel"
-              ></p>
-              <p
-                id="message-output"
-                class="message-output"
-                aria-labelledby="message-output-label"
-                data-message-output
-              ></p>
-              <button
-                type="button"
-                class="copy-button"
-                data-copy-target="message-output"
-                aria-describedby="message-output-label"
-                data-i18n="copy.label"
-                disabled
-              ></button>
-
-              <p class="notice" data-i18n="message.fallback"></p>
             </div>
           </article>
         </div>
@@ -203,23 +329,27 @@
     </main>
 
     <footer class="site-footer">
-      <section aria-labelledby="organizer-title">
-        <h2 id="organizer-title" data-i18n="footer.organizerHeading"></h2>
-        <p data-i18n="footer.organizer"></p>
-        <p hidden>
-          <a href="" rel="noopener" data-i18n="footer.instagramLabel"></a>
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <section aria-labelledby="organizer-title">
+            <h2 id="organizer-title" data-i18n="footer.organizerHeading"></h2>
+            <p data-i18n="footer.organizer"></p>
+            <p hidden>
+              <a href="" rel="noopener" data-i18n="footer.instagramLabel"></a>
+            </p>
+          </section>
+
+          <section aria-labelledby="privacy-title">
+            <h2 id="privacy-title" data-i18n="footer.privacyHeading"></h2>
+            <p data-i18n="footer.privacy"></p>
+          </section>
+        </div>
+
+        <p class="updated">
+          <span data-i18n="footer.updatedLabel"></span>
+          <time data-i18n="footer.updatedDate"></time>
         </p>
-      </section>
-
-      <section aria-labelledby="privacy-title">
-        <h2 id="privacy-title" data-i18n="footer.privacyHeading"></h2>
-        <p data-i18n="footer.privacy"></p>
-      </section>
-
-      <p class="updated">
-        <span data-i18n="footer.updatedLabel"></span>
-        <time data-i18n="footer.updatedDate"></time>
-      </p>
+      </div>
     </footer>
   </body>
 </html>

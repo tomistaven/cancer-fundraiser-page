@@ -2,9 +2,14 @@ import { ClipboardButton } from "./clipboard-button.js";
 import { I18n } from "./i18n.js";
 import { PaymentMessageBuilder } from "./payment-message-builder.js";
 import { PaymentMessageField } from "./payment-message-field.js";
+import { SnapCarousel } from "./snap-carousel.js";
+import { TabSwitcher } from "./tab-switcher.js";
 
 const i18n = new I18n();
 i18n.start();
+
+new SnapCarousel(document.querySelector("[data-snap-carousel]")).start();
+new TabSwitcher(document.querySelector("[data-tab-switcher]")).start();
 
 const copyButtons = new Map();
 
