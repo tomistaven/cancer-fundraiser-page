@@ -11,7 +11,7 @@ export default [
     },
   },
   {
-    files: ["functions/**/*.js", "eslint.config.js"],
+    files: ["eslint.config.js"],
     languageOptions: {
       globals: globals.node,
     },
