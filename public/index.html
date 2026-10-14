@@ -81,10 +81,6 @@
               <dd data-i18n="access.account"></dd>
               <dt data-i18n="access.recipientLabel"></dt>
               <dd data-i18n="access.recipient"></dd>
-              <dt data-i18n="access.messageLabel"></dt>
-              <dd data-i18n="access.message"></dd>
-              <dt data-i18n="access.mobilepayLabel"></dt>
-              <dd data-i18n="access.mobilepay"></dd>
             </dl>
 
             <h4 data-i18n="access.stepsHeading"></h4>
@@ -93,6 +89,69 @@
               <li data-i18n="access.step2"></li>
               <li data-i18n="access.step3"></li>
             </ol>
+
+            <div class="message-builder" data-payment-message>
+              <h4 data-i18n="message.heading"></h4>
+
+              <div class="field">
+                <label for="payer-name" data-i18n="message.nameLabel"></label>
+                <input
+                  id="payer-name"
+                  name="name"
+                  type="text"
+                  autocomplete="name"
+                  maxlength="60"
+                  aria-describedby="payer-name-hint message-error"
+                />
+                <p
+                  id="payer-name-hint"
+                  class="hint"
+                  data-i18n="message.nameHint"
+                ></p>
+              </div>
+
+              <div class="field">
+                <label
+                  for="payer-instagram"
+                  data-i18n="message.instagramLabel"
+                ></label>
+                <input
+                  id="payer-instagram"
+                  name="instagram"
+                  type="text"
+                  autocomplete="off"
+                  autocapitalize="none"
+                  spellcheck="false"
+                  maxlength="31"
+                  aria-describedby="payer-instagram-hint message-error"
+                />
+                <p
+                  id="payer-instagram-hint"
+                  class="hint"
+                  data-i18n="message.instagramHint"
+                ></p>
+              </div>
+
+              <p
+                id="message-error"
+                class="field-error"
+                aria-live="polite"
+                data-message-error
+              ></p>
+
+              <p
+                id="message-output-label"
+                class="message-label"
+                data-i18n="message.outputLabel"
+              ></p>
+              <p
+                class="message-output"
+                aria-labelledby="message-output-label"
+                data-message-output
+              ></p>
+
+              <p class="notice" data-i18n="message.fallback"></p>
+            </div>
           </article>
         </div>
       </section>
