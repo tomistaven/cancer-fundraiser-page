@@ -19,93 +19,72 @@ Bilingual (Finnish / English) single-page website that collects support for Tuom
 
 ## Project Overview
 
-The site offers two separate ways to help: an open donation with nothing in return, and a 30 € paid access to follow Tuomas's journey on his Instagram Close Friends list. People who pay for access fill in a short form; the request is saved to Firestore and Tuomas gets an email, checks the payment on his bank statement and adds the person by hand.
+The site offers two separate ways to help, each with its own bank account: an open donation with nothing in return, and a 30 € paid access to follow Tuomas's journey on his Instagram Close Friends list.
 
-The page is static HTML, CSS and vanilla JavaScript with no build step and no Firebase SDK in the browser. A single Cloud Function handles the form.
+People who pay for access put their name and Instagram username in the bank payment message, in the format Tuomas asked for. The page builds that message for them. Tuomas reads it from his bank statement and adds the person by hand.
+
+The site is fully static: HTML, CSS and vanilla JavaScript on Firebase Hosting, with no backend, no build step and nothing sent from the page.
 
 ---
 
 ## Feature Summary
 
-| Feature              | Description                                                                                               |
-| -------------------- | --------------------------------------------------------------------------------------------------------- |
-| Two support options  | Donation and paid access shown side by side with separate accounts; only paid access uses the form        |
-| Access request form  | Name and Instagram username, validated in the browser and again in the function                           |
-| Email notification   | Finnish plain-text email to Tuomas via Resend, with a direct Instagram link and a possible-duplicate flag |
-| Bot protection       | Hidden honeypot field and Cloudflare Turnstile, verified server-side                                      |
-| Finnish / English    | Finnish by default; the choice is remembered in the browser                                               |
-| Automatic deletion   | Records carry an `expiresAt` date and are removed by a Firestore TTL policy                               |
-| Locked-down database | Firestore rules deny all client access; only the function writes                                          |
+| Feature | Description |
+| --- | --- |
+| Two support options | Donation and paid access as tabs, donation selected by default; separate accounts, clearly labelled |
+| Payment message helper | Builds `<name>, vastikkeellinen keräys Tuomas Lappalaiselle, @<username>` from two inputs, with validation |
+| Copy buttons | One-click copy for both account numbers, the recipient and the payment message |
+| Story carousel | Diagnosis, treatment and current status as swipeable cards with tabs, plus arrows on desktop |
+| Finnish / English | Finnish by default; the choice is remembered in the browser |
+| Privacy | No forms, cookies, analytics or third-party requests. Fonts are self-hosted |
+| Accessibility | Real buttons and ARIA tabs, keyboard support, visible focus, reduced motion respected, contrast ≥ 4.5:1 |
 
 ---
 
 ## Architecture
 
 ```text
-Browser (static page)
-  │  POST /api/support-request   (same origin)
-  ▼
-Firebase Hosting ── rewrite ──► submitSupportRequest (Cloud Function, europe-west1)
-                                  ├─ honeypot → validate → verify Turnstile
-                                  ├─ save supportRequests/{id} (Admin SDK)
-                                  └─ notify Tuomas via Resend
+Browser ──► Firebase Hosting (static files only)
+            Nothing is sent from the page. localStorage holds the language choice only.
 ```
 
 ```text
 public/
   index.html
   css/styles.css
+  fonts/                       Fraunces and Figtree (woff2, latin subset) + OFL licences
   js/
-    main.js              entry point
-    content.js           all page text, fi + en
-    i18n.js              I18n: renders text, language toggle
-    turnstile-widget.js  TurnstileWidget: renders the widget, exposes the token
-    support-form.js      SupportForm: validation, submission, status messages
-functions/
-  index.js               endpoint, settings, error-to-response mapping
-  src/
-    support-request-error.js       SupportRequestError
-    support-request-validator.js   SupportRequestValidator
-    turnstile-verifier.js          TurnstileVerifier
-    support-request-repository.js  SupportRequestRepository
-    email-notifier.js              EmailNotifier
-    support-request-service.js     SupportRequestService
-firestore.rules          deny all client reads and writes
+    main.js                    entry point, wires the classes below
+    content.js                 all page text, fi + en
+    i18n.js                    I18n: renders text, language toggle
+    payment-message-builder.js PaymentMessageBuilder: validates input, builds the message
+    payment-message-field.js   PaymentMessageField: inputs, live message, errors
+    clipboard-button.js        ClipboardButton: copy with translated feedback
+    snap-carousel.js           SnapCarousel: story cards, tabs, arrows
+    tab-switcher.js            TabSwitcher: accessible tabs for the support options
+firebase.json                  Hosting config, security headers, cache rules
 ```
 
-**Frontend.** One class per module. `content.js` holds every string under flat keys (`hero.title`, `error.invalid_name`); HTML elements reference them with `data-i18n` and `data-i18n-attr`.
+**One class per module.** `main.js` creates them; each class takes its root element and finds its parts through `data-*` attributes, so markup and behaviour stay loosely coupled.
 
-**Function.** One class per responsibility. `SupportRequestService` coordinates the others; `index.js` builds them per request, because secret values are only available at runtime.
+**Content.** `content.js` holds every string under flat keys (`hero.title`, `access.step1`). Elements reference them with `data-i18n` (text) and `data-i18n-attr` (attributes). The only hardcoded text in the HTML is the bilingual `<noscript>` notice.
 
-**Error codes.** The function returns codes, not text, and the page translates them:
-
-| Status | Code                                |
-| ------ | ----------------------------------- |
-| 400    | `invalid_name`, `invalid_instagram` |
-| 403    | `turnstile_failed`                  |
-| 405    | `method_not_allowed`                |
-| 500    | `server_error`                      |
+**Without JavaScript** the carousel navigation and tabs stay hidden, both support cards show, and the story cards can still be scrolled sideways.
 
 ---
 
 ## Dependencies
 
-**Function runtime** (`functions/package.json`)
-
-| Package              | Purpose                                |
-| -------------------- | -------------------------------------- |
-| `firebase-functions` | HTTPS function, parameters and secrets |
-| `firebase-admin`     | Firestore writes from the function     |
-| `resend`             | Notification email                     |
+The page has no runtime dependencies.
 
 **Development** (root `package.json`, never deployed)
 
-| Package                           | Purpose                                                              |
-| --------------------------------- | -------------------------------------------------------------------- |
-| `eslint`, `@eslint/js`, `globals` | Linting: Node rules for `functions/`, browser rules for `public/js/` |
-| `prettier`                        | Formatting                                                           |
+| Package | Purpose |
+| --- | --- |
+| `eslint`, `@eslint/js`, `globals` | Linting with browser rules for `public/js/` |
+| `prettier` | Formatting |
 
-The page itself has no dependencies. The only third-party script is Cloudflare Turnstile.
+**Fonts:** Fraunces and Figtree, SIL Open Font License 1.1 (licence files in `public/fonts/`).
 
 ---
 
@@ -122,28 +101,7 @@ The page itself has no dependencies. The only third-party script is Cloudflare T
 git clone https://github.com/tomistaven/cancer-fundraiser-page.git
 cd cancer-fundraiser-page
 npm install
-npm install --prefix functions
 ```
-
-### Local settings
-
-Both files below are git-ignored. Write each line as `NAME=value`, starting at the beginning of the line, with no quotes.
-
-`functions/.env.local`:
-
-```text
-NOTIFY_FROM=noreply@tuomaksensyopamatkassa.blog
-NOTIFY_TO=<your own address for testing>
-```
-
-`functions/.secret.local`:
-
-```text
-TURNSTILE_SECRET_KEY=1x0000000000000000000000000000000AA
-RESEND_API_KEY=<a Resend key, only if you want test emails to be sent>
-```
-
-The Turnstile value is Cloudflare's always-passing test secret. On `localhost` the page uses the matching test site key automatically. Without a Resend key the request is still saved and the email failure is logged.
 
 ### Run
 
@@ -151,7 +109,7 @@ The Turnstile value is Cloudflare's always-passing test secret. On `localhost` t
 firebase emulators:start
 ```
 
-The page is at `http://localhost:5000` and the Emulator UI shows saved records.
+The page is at `http://localhost:5000`. The copy buttons need a secure context, which `localhost` counts as.
 
 ### Lint and format
 
@@ -160,32 +118,27 @@ npx eslint .
 npm run format
 ```
 
-Deploying the function runs lint automatically.
-
 ---
 
 ## Deployment
 
-One-time setup:
+The project runs on the free Spark plan; Hosting needs no Blaze upgrade.
 
-1. Upgrade the project to the Blaze plan. Set a Cloud Functions spend cap and an all-services budget alert.
-2. Set the secrets:
-   ```bash
-   firebase functions:secrets:set TURNSTILE_SECRET_KEY
-   firebase functions:secrets:set RESEND_API_KEY
-   ```
-3. Set an Artifact Registry cleanup policy: `firebase functions:artifacts:setpolicy`.
-4. Enable the TTL policy on `supportRequests.expiresAt` in the Firestore console.
-
-Deploy:
+**Preview for review** (temporary URL, the live site is untouched):
 
 ```bash
-firebase deploy
+firebase hosting:channel:deploy review --expires 7d
 ```
 
-On the first deploy the CLI asks for `NOTIFY_FROM` and `NOTIFY_TO` and saves them to `functions/.env.<project-id>`, which is git-ignored.
+The CLI prints the preview URL. A channel can live up to 30 days and can be redeployed with the same command.
 
-Deploy the function before (or together with) Hosting: the `/api/support-request` rewrite points at it.
+**Live site:**
+
+```bash
+firebase deploy --only hosting
+```
+
+`/`, all HTML and `/js/content.js` are served with `Cache-Control: no-cache`, so text changes show up on the next page load.
 
 ---
 
@@ -193,40 +146,44 @@ Deploy the function before (or together with) Hosting: the `/api/support-request
 
 ### Visitor
 
-1. Read the page and choose an option under **Näin voit auttaa**.
-2. Donation: transfer any amount to the donation account. No form.
-3. Paid access: transfer 30 € with the stated message, then fill in name and Instagram username and send.
+1. Read the story cards and choose an option under **Näin voit auttaa**.
+2. **Donation:** transfer any amount to the donation account. Nothing else is needed.
+3. **Paid access:** enter your name and Instagram username, copy the generated message, and pay 30 € to the access account with that message. If you forget the message or mistype your username, send Tuomas a direct message on Instagram from the account you want added.
 
 ### Tuomas
 
-1. A new request arrives by email with the name, handle and a link to the profile.
-2. Check the payment on the bank statement.
-3. Add the person to Close Friends and set the record's `status` to `added` in the Firestore console.
+1. Check incoming payments on the access account. The message holds the payer's name and Instagram username.
+2. Add the person to Close Friends.
 
 ### Updating content
 
-All text, account details and the "last updated" dates are in `public/js/content.js`. Edit both `fi` and `en`, then `firebase deploy --only hosting`. The file is served with `no-cache`, so changes appear immediately.
+- **Text, account details and "last updated" dates:** `public/js/content.js`. Edit both `fi` and `en`; they must keep the same keys.
+- **Hero photo:** put the image in `public/images/`, then in `index.html` give the hero `<img>` a `src`, `width` and `height`, and remove `hidden` from its `<figure>`. The hero switches to two columns by itself.
+- **Study link:** set the `href` of the link in the treatment card and remove its `hidden` attribute.
+- **Instagram link in the footer:** set its `href` and remove `hidden` from the surrounding paragraph.
+
+Then deploy again.
 
 ---
 
 ## Design Decisions and Challenges
 
-### No Firebase SDK in the browser
+### The bank statement is the record
 
-The form posts to a same-origin endpoint instead of writing to Firestore from the page. Firestore rules can then deny everything, the page stays small, and the Content Security Policy only needs the site's own origin plus Turnstile.
+An earlier version had a form, a Cloud Function, Firestore and email notifications. Tuomas's own instructions already put the payer's name and username in the payment message, so the statement holds everything he needs, and a separate form only added a way for payment and form to disagree. The backend was removed; it remains in the git history.
 
-### Function region vs. database location
+### Copying the message instead of a form
 
-Firestore is in the `eur3` multi-region. Cloud Functions can't run in a multi-region, so the function runs in `europe-west1`, one of `eur3`'s two read-write regions.
+Building the message on the page keeps payment and username in one step without collecting any data. Validation is the same as Instagram's username rules, and the message is capped at the 140 characters a bank message allows.
 
-### Duplicates and email failures don't block a request
+### Self-hosted fonts
 
-A repeated Instagram handle is still saved and flagged in the email, so a genuine second payment is never lost. A failed email is logged with the request ID only, because the record is already saved and visible in the console.
+Loading Google Fonts from Google would send every visitor's IP address to Google and require loosening the Content Security Policy. The fonts are subset to Latin (including ä, ö, å, € and arrows) and served from the site, about 71 KB in total.
 
-### Privacy by omission
+### Native scrolling for the carousel
 
-Only name, handle, amount, status and timestamps are stored. The visitor's IP is not sent to Cloudflare or logged. Records are deleted automatically one month after the collection ends.
+The story cards use CSS scroll-snap, so swiping is the browser's own scrolling. `SnapCarousel` only adds tabs, arrows and the "current card" marker, and tracks position from the scroll offset because two cards can be mostly visible at once when the neighbours peek in.
 
-### Turnstile on localhost
+### Kept apart on purpose
 
-The production site key doesn't allow `localhost`, and Cloudflare recommends keeping it that way. `TurnstileWidget` renders the widget explicitly and picks Cloudflare's test key on `localhost`, so no key has to be swapped by hand.
+The donation and the paid access go to different accounts, have separate tabs and different card styling, and the donation text states that it gives nothing in return.
