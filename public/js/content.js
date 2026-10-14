@@ -32,6 +32,10 @@ export const content = Object.freeze({
     "status.updatedLabel": "Päivitetty",
     "status.updatedDate": "[pp.kk.vvvv]",
 
+    "story.tabDiagnosis": "Diagnoosi",
+    "story.tabTreatment": "Hoito Saksassa",
+    "story.tabStatus": "Tilanne nyt",
+
     "support.heading": "Näin voit auttaa",
     "support.intro": "Voit auttaa kahdella erillisellä tavalla. Lahjoitus ja maksullinen seuraaminen menevät eri tileille.",
     "support.period": "Keräysaika 12.10.2026–11.1.2027.",
@@ -111,6 +115,10 @@ export const content = Object.freeze({
     "status.body": "[TO BE ADDED: a short current update.]",
     "status.updatedLabel": "Updated",
     "status.updatedDate": "[dd.mm.yyyy]",
+
+    "story.tabDiagnosis": "Diagnosis",
+    "story.tabTreatment": "Treatment",
+    "story.tabStatus": "Status",
 
     "support.heading": "How you can help",
     "support.intro": "There are two separate ways to help. Donations and paid access go to different accounts.",
