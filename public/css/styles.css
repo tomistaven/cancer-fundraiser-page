@@ -1,4 +1,53 @@
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/fraunces-600.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/fraunces-700.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Figtree";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/figtree-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Figtree";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/figtree-600.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Figtree";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/figtree-700.woff2") format("woff2");
+}
+
 :root {
+  /* The canvas is the dark page behind everything; --color-page stays the
+     light tone used for inset boxes inside the white cards. */
+  --color-canvas: #161816;
+  --color-canvas-deep: #0f110f;
+  --color-canvas-ink: #f3efe6;
+  --color-canvas-muted: #b9c0ba;
+  --color-canvas-line: rgba(243, 239, 230, 0.14);
+  --color-glow: #2fae6b;
+
   --color-page: #f9f6f0;
   --color-surface: #ffffff;
   --color-surface-warm: #f1ede4;
@@ -12,8 +61,10 @@
   --color-error: #b42b20;
 
   --font-heading:
-    Charter, "Iowan Old Style", "Palatino Linotype", Georgia, serif;
-  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    "Fraunces", Charter, "Iowan Old Style", "Palatino Linotype", Georgia,
+    serif;
+  --font-body:
+    "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-mono:
     ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, monospace;
 
@@ -63,12 +114,21 @@ html {
 
 body {
   margin: 0;
-  background: radial-gradient(
-    circle at 50% 0%,
-    #ffffff 0%,
-    var(--color-page) 65%
-  );
-  color: var(--color-ink);
+  /* A soft colour wash across the top fades into a neutral dark page, so
+     the warmth sits behind the title and the content below stays calm. */
+  background:
+    radial-gradient(
+      70rem 34rem at 20% -8rem,
+      rgba(47, 174, 107, 0.32),
+      transparent 70%
+    ),
+    radial-gradient(
+      60rem 30rem at 85% -6rem,
+      rgba(64, 160, 170, 0.22),
+      transparent 70%
+    ),
+    var(--color-canvas);
+  color: var(--color-canvas-ink);
   font-family: var(--font-body);
   font-size: 1.0625rem;
   line-height: 1.65;
@@ -109,8 +169,19 @@ a {
 }
 
 :focus-visible {
-  outline: 3px solid var(--color-accent);
+  outline: 3px solid var(--color-glow);
   outline-offset: 3px;
+}
+
+/* On the white cards the bright ring would be too faint. */
+.card :focus-visible,
+.story-card :focus-visible {
+  outline-color: var(--color-accent);
+}
+
+.card,
+.story-card {
+  color: var(--color-ink);
 }
 
 main {
@@ -122,11 +193,10 @@ main {
 .language-toggle {
   flex: 0 0 auto;
   padding: 0.45rem 1.15rem;
-  border: 1px solid var(--color-line-strong);
+  border: 1px solid var(--color-canvas-line);
   border-radius: var(--radius-pill);
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(8px);
-  color: var(--color-ink);
+  background: rgba(243, 239, 230, 0.08);
+  color: var(--color-canvas-ink);
   font: inherit;
   font-size: 0.875rem;
   font-weight: 600;
@@ -139,8 +209,8 @@ main {
 }
 
 .language-toggle:hover {
-  border-color: var(--color-accent);
-  background: var(--color-surface);
+  border-color: var(--color-glow);
+  background: rgba(243, 239, 230, 0.14);
   transform: translateY(-1px);
 }
 
@@ -177,7 +247,7 @@ main {
 .hero p {
   max-width: 36rem;
   margin-bottom: 1.5rem;
-  color: var(--color-muted);
+  color: var(--color-canvas-muted);
   font-size: clamp(1.1rem, 2vw, 1.225rem);
 }
 
@@ -263,10 +333,10 @@ main {
   justify-content: center;
   width: 2.5rem;
   height: 2.5rem;
-  border: 1px solid var(--color-line-strong);
+  border: 1px solid var(--color-canvas-line);
   border-radius: 50%;
-  background: var(--color-surface);
-  color: var(--color-ink);
+  background: rgba(243, 239, 230, 0.08);
+  color: var(--color-canvas-ink);
   font: inherit;
   font-size: 1.125rem;
   cursor: pointer;
@@ -294,12 +364,11 @@ main {
   width: fit-content;
   max-width: 100%;
   padding: 0.35rem;
-  border: 1px solid var(--color-line);
+  border: 1px solid var(--color-canvas-line);
   border-radius: var(--radius-pill);
-  background: var(--color-surface-warm);
+  background: rgba(243, 239, 230, 0.06);
   overflow-x: auto;
   scrollbar-width: none;
-  box-shadow: inset 0 1px 2px rgba(28, 43, 34, 0.04);
 }
 
 .pill-tab {
@@ -308,7 +377,7 @@ main {
   border: 0;
   border-radius: var(--radius-pill);
   background: transparent;
-  color: var(--color-muted);
+  color: var(--color-canvas-muted);
   font: inherit;
   font-size: 0.9375rem;
   font-weight: 600;
@@ -318,7 +387,7 @@ main {
 }
 
 .pill-tab:hover {
-  color: var(--color-ink);
+  color: var(--color-canvas-ink);
 }
 
 .pill-tab[aria-current="true"],
@@ -373,8 +442,9 @@ main {
 .story-track > .story-card:not([data-current]) {
   cursor: pointer;
   transform: scale(0.94);
-  opacity: 0.72;
-  background: var(--color-surface-warm);
+  /* A dimmed white card reads as "behind"; a beige one turns muddy grey
+     against the dark canvas. */
+  opacity: 0.5;
 }
 
 .story-card,
@@ -470,7 +540,7 @@ main {
 }
 
 .support-intro {
-  color: var(--color-muted);
+  color: var(--color-canvas-muted);
   font-size: 1.125rem;
 }
 
@@ -479,8 +549,8 @@ main {
   margin: 0;
   padding: 0.3rem 0.9rem;
   border-radius: var(--radius-pill);
-  background: var(--color-surface-warm);
-  color: var(--color-muted);
+  background: rgba(243, 239, 230, 0.08);
+  color: var(--color-canvas-muted);
   font-size: 0.875rem;
   font-weight: 600;
 }
@@ -692,9 +762,9 @@ main {
 }
 
 .site-footer {
-  border-top: 1px solid var(--color-line);
-  background: var(--color-surface-warm);
-  color: var(--color-muted);
+  border-top: 1px solid var(--color-canvas-line);
+  background: var(--color-canvas-deep);
+  color: var(--color-canvas-muted);
   font-size: 0.9375rem;
 }
 
@@ -714,16 +784,20 @@ main {
   max-width: var(--measure);
 }
 
+.site-footer a {
+  color: var(--color-canvas-ink);
+}
+
 .site-footer h2 {
   margin-bottom: 0.5rem;
-  color: var(--color-ink);
+  color: var(--color-canvas-ink);
   font-size: 1.125rem;
 }
 
 .updated {
   margin: 0;
   padding-top: var(--space-3);
-  border-top: 1px solid var(--color-line);
+  border-top: 1px solid var(--color-canvas-line);
   font-size: 0.875rem;
 }
 
@@ -771,13 +845,11 @@ main {
 
   .story-track > .story-card:not([data-current]) {
     transform: scale(0.92) translateY(6px);
-    opacity: 0.78;
-    background: var(--color-surface-warm);
-    border-color: var(--color-line-strong);
+    opacity: 0.5;
   }
 
   .story-track > .story-card:not([data-current]):hover {
-    opacity: 0.95;
+    opacity: 0.8;
     transform: scale(0.95) translateY(2px);
     border-color: var(--color-accent);
   }
