@@ -27,15 +27,15 @@ The page is static HTML, CSS and vanilla JavaScript with no build step and no Fi
 
 ## Feature Summary
 
-| Feature | Description |
-| --- | --- |
-| Two support options | Donation and paid access shown side by side with separate accounts; only paid access uses the form |
-| Access request form | Name and Instagram username, validated in the browser and again in the function |
-| Email notification | Finnish plain-text email to Tuomas via Resend, with a direct Instagram link and a possible-duplicate flag |
-| Bot protection | Hidden honeypot field and Cloudflare Turnstile, verified server-side |
-| Finnish / English | Finnish by default; the choice is remembered in the browser |
-| Automatic deletion | Records carry an `expiresAt` date and are removed by a Firestore TTL policy |
-| Locked-down database | Firestore rules deny all client access; only the function writes |
+| Feature              | Description                                                                                               |
+| -------------------- | --------------------------------------------------------------------------------------------------------- |
+| Two support options  | Donation and paid access shown side by side with separate accounts; only paid access uses the form        |
+| Access request form  | Name and Instagram username, validated in the browser and again in the function                           |
+| Email notification   | Finnish plain-text email to Tuomas via Resend, with a direct Instagram link and a possible-duplicate flag |
+| Bot protection       | Hidden honeypot field and Cloudflare Turnstile, verified server-side                                      |
+| Finnish / English    | Finnish by default; the choice is remembered in the browser                                               |
+| Automatic deletion   | Records carry an `expiresAt` date and are removed by a Firestore TTL policy                               |
+| Locked-down database | Firestore rules deny all client access; only the function writes                                          |
 
 ---
 
@@ -79,12 +79,12 @@ firestore.rules          deny all client reads and writes
 
 **Error codes.** The function returns codes, not text, and the page translates them:
 
-| Status | Code |
-| --- | --- |
-| 400 | `invalid_name`, `invalid_instagram` |
-| 403 | `turnstile_failed` |
-| 405 | `method_not_allowed` |
-| 500 | `server_error` |
+| Status | Code                                |
+| ------ | ----------------------------------- |
+| 400    | `invalid_name`, `invalid_instagram` |
+| 403    | `turnstile_failed`                  |
+| 405    | `method_not_allowed`                |
+| 500    | `server_error`                      |
 
 ---
 
@@ -92,18 +92,18 @@ firestore.rules          deny all client reads and writes
 
 **Function runtime** (`functions/package.json`)
 
-| Package | Purpose |
-| --- | --- |
+| Package              | Purpose                                |
+| -------------------- | -------------------------------------- |
 | `firebase-functions` | HTTPS function, parameters and secrets |
-| `firebase-admin` | Firestore writes from the function |
-| `resend` | Notification email |
+| `firebase-admin`     | Firestore writes from the function     |
+| `resend`             | Notification email                     |
 
 **Development** (root `package.json`, never deployed)
 
-| Package | Purpose |
-| --- | --- |
+| Package                           | Purpose                                                              |
+| --------------------------------- | -------------------------------------------------------------------- |
 | `eslint`, `@eslint/js`, `globals` | Linting: Node rules for `functions/`, browser rules for `public/js/` |
-| `prettier` | Formatting |
+| `prettier`                        | Formatting                                                           |
 
 The page itself has no dependencies. The only third-party script is Cloudflare Turnstile.
 

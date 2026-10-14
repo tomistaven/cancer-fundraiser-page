@@ -9,16 +9,6 @@
     <script type="module" src="js/main.js"></script>
   </head>
   <body>
-    <header class="site-header">
-      <button
-        type="button"
-        class="language-toggle"
-        data-language-toggle
-        data-i18n="language.toggle"
-        data-i18n-attr="aria-label:language.toggleLabel"
-      ></button>
-    </header>
-
     <noscript>
       <p class="noscript">
         Sivu tarvitsee JavaScriptin. This page needs JavaScript.
@@ -27,8 +17,18 @@
 
     <main>
       <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-content">
+        <div class="hero-title-row">
           <h1 id="hero-title" data-i18n="hero.title"></h1>
+          <button
+            type="button"
+            class="language-toggle"
+            data-language-toggle
+            data-i18n="language.toggle"
+            data-i18n-attr="aria-label:language.toggleLabel"
+          ></button>
+        </div>
+
+        <div class="hero-content">
           <p data-i18n="hero.intro"></p>
           <a class="button" href="#support" data-i18n="hero.cta"></a>
         </div>
@@ -39,31 +39,53 @@
       </section>
 
       <div class="story" data-snap-carousel>
-        <div class="story-tabs" data-carousel-tabs hidden>
-          <button
-            type="button"
-            class="pill-tab"
-            data-carousel-tab="diagnosis"
-            data-i18n="diagnosis.heading"
-          ></button>
-          <button
-            type="button"
-            class="pill-tab"
-            data-carousel-tab="treatment"
-            data-i18n="treatment.heading"
-          ></button>
-          <button
-            type="button"
-            class="pill-tab"
-            data-carousel-tab="status"
-            data-i18n="status.heading"
-          ></button>
+        <div class="story-nav" data-carousel-nav hidden>
+          <div class="story-tabs">
+            <button
+              type="button"
+              class="pill-tab"
+              data-carousel-tab="diagnosis"
+              data-i18n="story.tabDiagnosis"
+            ></button>
+            <button
+              type="button"
+              class="pill-tab"
+              data-carousel-tab="treatment"
+              data-i18n="story.tabTreatment"
+            ></button>
+            <button
+              type="button"
+              class="pill-tab"
+              data-carousel-tab="status"
+              data-i18n="story.tabStatus"
+            ></button>
+          </div>
+
+          <div class="story-arrows">
+            <button
+              type="button"
+              class="arrow-button"
+              data-carousel-prev
+              data-i18n-attr="aria-label:carousel.previous"
+            >
+              <span aria-hidden="true">←</span>
+            </button>
+            <button
+              type="button"
+              class="arrow-button"
+              data-carousel-next
+              data-i18n-attr="aria-label:carousel.next"
+            >
+              <span aria-hidden="true">→</span>
+            </button>
+          </div>
         </div>
 
         <div class="story-track" data-carousel-track>
           <section
             id="diagnosis"
             class="story-card"
+            data-current
             aria-labelledby="diagnosis-title"
           >
             <h2 id="diagnosis-title" data-i18n="diagnosis.heading"></h2>
