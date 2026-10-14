@@ -55,7 +55,10 @@ export class SupportRequestService {
       await this.#notifier.notifyNewRequest(details);
     } catch (error) {
       // Only the request ID is logged; names and handles stay out of the logs.
-      logger.error("Notification email failed", { requestId, message: error.message });
+      logger.error("Notification email failed", {
+        requestId,
+        reason: error.message,
+      });
     }
   }
 }

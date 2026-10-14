@@ -59,7 +59,7 @@ export const submitSupportRequest = onRequest(
         return;
       }
 
-      logger.error("Support request failed", { message: error.message });
+      logger.error("Support request failed", { reason: error.message });
       response.status(500).json({ error: "server_error" });
     }
   },
