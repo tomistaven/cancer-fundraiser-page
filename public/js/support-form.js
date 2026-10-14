@@ -8,29 +8,30 @@ const HANDLE_PATTERN = /^[a-z0-9._]{1,30}$/;
  * current language.
  *
  * Expects the form to contain inputs named `name`, `instagram` and `website` (honeypot),
- * a `.cf-turnstile` widget, a submit button and a `[data-form-status]` element.
+ * a submit button and a `[data-form-status]` element.
  */
 export class SupportForm {
   #form;
   #i18n;
+  #turnstile;
   #nameInput;
   #instagramInput;
   #submitButton;
   #status;
-  #turnstileContainer;
 
   /**
    * @param {HTMLFormElement} form The access request form.
    * @param {import("./i18n.js").I18n} i18n Translator for status and error messages.
+   * @param {import("./turnstile-widget.js").TurnstileWidget} turnstile Source of the bot-check token.
    */
-  constructor(form, i18n) {
+  constructor(form, i18n, turnstile) {
     this.#form = form;
     this.#i18n = i18n;
+    this.#turnstile = turnstile;
     this.#nameInput = form.elements.namedItem("name");
     this.#instagramInput = form.elements.namedItem("instagram");
     this.#submitButton = form.querySelector('button[type="submit"]');
     this.#status = form.querySelector("[data-form-status]");
-    this.#turnstileContainer = form.querySelector(".cf-turnstile");
   }
 
   /** Takes over form submission from the browser. */
@@ -72,7 +73,7 @@ export class SupportForm {
     } finally {
       this.#setBusy(false);
       // Each Turnstile token can only be verified once, so every attempt needs a fresh one.
-      window.turnstile?.reset(this.#turnstileContainer);
+      this.#turnstile.reset();
     }
   }
 
@@ -103,7 +104,7 @@ export class SupportForm {
       name: data.get("name"),
       instagram: data.get("instagram"),
       website: data.get("website"),
-      turnstileToken: data.get("cf-turnstile-response"),
+      turnstileToken: this.#turnstile.token,
     };
   }
 

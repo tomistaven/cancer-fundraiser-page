@@ -9,8 +9,7 @@
   --color-accent-tint: #e6f1ea;
   --color-error: #a3261b;
 
-  --font-heading:
-    Charter, "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-heading: Charter, "Iowan Old Style", "Palatino Linotype", Georgia, serif;
   --font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
   --space-1: 0.5rem;
@@ -275,7 +274,7 @@ main,
   overflow: hidden;
 }
 
-.cf-turnstile {
+.turnstile {
   margin: var(--space-2) 0;
 }
 
