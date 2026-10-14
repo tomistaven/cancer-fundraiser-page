@@ -10,6 +10,9 @@ export const content = Object.freeze({
     "copy.done": "Kopioitu",
     "copy.failed": "Ei onnistunut, kopioi käsin",
 
+    "carousel.previous": "Edellinen kortti",
+    "carousel.next": "Seuraava kortti",
+
     "hero.title": "Tuomaksen syöpämatka",
     "hero.intro": "[TÄYDENNETÄÄN: lyhyt esittely Tuomaksesta ja keräyksen tarkoituksesta.]",
     "hero.cta": "Näin voit auttaa",
@@ -72,7 +75,7 @@ export const content = Object.freeze({
     "footer.organizer": "[TÄYDENNETÄÄN: järjestäjän nimi ja yhteystiedot]",
     "footer.instagramLabel": "Tuomas Instagramissa",
     "footer.privacyHeading": "Tietosuoja",
-    "footer.privacy": "Lomakkeella kerätään vain nimesi ja Instagram-käyttäjänimesi, jotta Tuomas voi yhdistää maksusi ja lisätä sinut Close Friends -listalle. Tiedot tallennetaan Googlen Firebase-palveluun EU:ssa, ja Tuomas saa ne sähköpostiinsa Resend-palvelun kautta. Resend säilyttää lähetetyt viestit 30 päivää. Tiedot poistetaan automaattisesti 11.2.2027. Lomake käyttää Cloudflare Turnstile -varmistusta roskapostin estämiseksi. Sivusto ei käytä analytiikkaa.",
+    "footer.privacy": "Sivusto itse ei kerää tietojasi: siinä ei ole lomakkeita, evästeitä, analytiikkaa eikä ulkopuolisia skriptejä tai fontteja. Maksun viestiä varten kirjoittamasi nimi ja Instagram-käyttäjänimi pysyvät vain omassa selaimessasi, ja kielivalinta tallennetaan selaimesi muistiin. Maksut menevät suoraan Tuomaksen pankkitileille. Tuomas näkee tiliotteellaan maksajan nimen ja viestin, ja hän käyttää Instagram-käyttäjänimeä vain lisätäkseen sinut Close Friends -listalle. Sivuston palvelin, Googlen Firebase Hosting, käsittelee kävijöiden IP-osoitteita väärinkäytösten estämiseksi ja käyttötilastoja varten ja säilyttää niitä Googlen mukaan muutaman kuukauden.",
     "footer.updatedLabel": "Sivu päivitetty",
     "footer.updatedDate": "[pp.kk.vvvv]",
   }),
@@ -86,6 +89,9 @@ export const content = Object.freeze({
     "copy.label": "Copy",
     "copy.done": "Copied",
     "copy.failed": "Didn't work, copy by hand",
+
+    "carousel.previous": "Previous card",
+    "carousel.next": "Next card",
 
     "hero.title": "Tuomas' cancer journey",
     "hero.intro": "[TO BE ADDED: a short introduction to Tuomas and the purpose of the collection.]",
@@ -149,7 +155,7 @@ export const content = Object.freeze({
     "footer.organizer": "[TO BE ADDED: organizer name and contact details]",
     "footer.instagramLabel": "Tuomas on Instagram",
     "footer.privacyHeading": "Privacy",
-    "footer.privacy": "The form collects only your name and Instagram username, so Tuomas can match your payment and add you to his Close Friends list. The data is stored in Google's Firebase service in the EU, and Tuomas receives it by email through the Resend service. Resend keeps sent messages for 30 days. The data is deleted automatically on 11.2.2027. The form uses Cloudflare Turnstile to block spam. The site uses no analytics.",
+    "footer.privacy": "The site itself collects nothing about you: it has no forms, cookies, analytics, or third-party scripts or fonts. The name and Instagram username you type for the payment message stay in your own browser, and your language choice is stored in your browser. Payments go directly to Tuomas' bank accounts. Tuomas sees the payer's name and message on his bank statement, and uses the Instagram username only to add you to his Close Friends list. The site's server, Google's Firebase Hosting, processes visitors' IP addresses to prevent abuse and for usage statistics, and according to Google keeps them for a few months.",
     "footer.updatedLabel": "Page updated",
     "footer.updatedDate": "[dd.mm.yyyy]",
   }),
