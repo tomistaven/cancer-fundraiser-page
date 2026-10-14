@@ -48,7 +48,9 @@ export class SupportForm {
     const invalidInput = this.#findInvalidInput();
 
     if (invalidInput) {
-      this.#showError(invalidInput === this.#nameInput ? "invalid_name" : "invalid_instagram");
+      this.#showError(
+        invalidInput === this.#nameInput ? "invalid_name" : "invalid_instagram",
+      );
       invalidInput.focus();
       return;
     }
@@ -80,7 +82,8 @@ export class SupportForm {
   #findInvalidInput() {
     const name = this.#nameInput.value.trim();
     const handle = this.#normalizeHandle(this.#instagramInput.value);
-    const nameValid = name.length >= NAME_MIN_LENGTH && name.length <= NAME_MAX_LENGTH;
+    const nameValid =
+      name.length >= NAME_MIN_LENGTH && name.length <= NAME_MAX_LENGTH;
     const handleValid = HANDLE_PATTERN.test(handle);
 
     this.#nameInput.setAttribute("aria-invalid", String(!nameValid));
@@ -119,12 +122,18 @@ export class SupportForm {
 
   #setBusy(busy) {
     this.#submitButton.disabled = busy;
-    this.#setTranslated(this.#submitButton, busy ? "form.submitting" : "form.submit");
+    this.#setTranslated(
+      this.#submitButton,
+      busy ? "form.submitting" : "form.submit",
+    );
   }
 
   #showError(code) {
     const key = `error.${code}`;
-    this.#showStatus("error", this.#i18n.translate(key) === key ? "error.server_error" : key);
+    this.#showStatus(
+      "error",
+      this.#i18n.translate(key) === key ? "error.server_error" : key,
+    );
   }
 
   #showStatus(state, key) {

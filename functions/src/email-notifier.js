@@ -49,10 +49,16 @@ export class EmailNotifier {
     ];
 
     if (possibleDuplicate) {
-      lines.push("", "Huom: sama Instagram-tunnus on jo pyynnössä. Tämä voi olla päällekkäinen.");
+      lines.push(
+        "",
+        "Huom: sama Instagram-tunnus on jo pyynnössä. Tämä voi olla päällekkäinen.",
+      );
     }
 
-    lines.push("", "Tarkista maksu tiliotteesta ennen kuin lisäät henkilön Close Friends -listalle.");
+    lines.push(
+      "",
+      "Tarkista maksu tiliotteesta ennen kuin lisäät henkilön Close Friends -listalle.",
+    );
 
     return lines.join("\n");
   }

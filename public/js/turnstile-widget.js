@@ -27,7 +27,9 @@ export class TurnstileWidget {
       return;
     }
 
-    this.#widgetId = window.turnstile.render(this.#container, { sitekey: this.#siteKey() });
+    this.#widgetId = window.turnstile.render(this.#container, {
+      sitekey: this.#siteKey(),
+    });
   }
 
   /** @returns {string} The current token, or an empty string if there is none yet. */
@@ -47,6 +49,8 @@ export class TurnstileWidget {
   }
 
   #siteKey() {
-    return LOCAL_HOSTNAMES.has(window.location.hostname) ? TEST_SITE_KEY : PRODUCTION_SITE_KEY;
+    return LOCAL_HOSTNAMES.has(window.location.hostname)
+      ? TEST_SITE_KEY
+      : PRODUCTION_SITE_KEY;
   }
 }

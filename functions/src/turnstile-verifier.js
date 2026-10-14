@@ -1,6 +1,7 @@
 import { SupportRequestError } from "./support-request-error.js";
 
-const SITEVERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
+const SITEVERIFY_URL =
+  "https://challenges.cloudflare.com/turnstile/v0/siteverify";
 
 export class TurnstileVerifier {
   #secretKey;

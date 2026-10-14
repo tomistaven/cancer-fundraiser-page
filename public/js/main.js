@@ -5,7 +5,13 @@ import { TurnstileWidget } from "./turnstile-widget.js";
 const i18n = new I18n();
 i18n.start();
 
-const turnstile = new TurnstileWidget(document.querySelector("[data-turnstile]"));
+const turnstile = new TurnstileWidget(
+  document.querySelector("[data-turnstile]"),
+);
 turnstile.start();
 
-new SupportForm(document.querySelector("[data-support-form]"), i18n, turnstile).start();
+new SupportForm(
+  document.querySelector("[data-support-form]"),
+  i18n,
+  turnstile,
+).start();

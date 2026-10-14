@@ -32,7 +32,9 @@ export class SupportRequestValidator {
 
   #validateHandle(value) {
     const handle =
-      typeof value === "string" ? value.trim().replace(/^@/, "").toLowerCase() : "";
+      typeof value === "string"
+        ? value.trim().replace(/^@/, "").toLowerCase()
+        : "";
 
     if (!HANDLE_PATTERN.test(handle)) {
       throw new SupportRequestError("invalid_instagram", 400);
