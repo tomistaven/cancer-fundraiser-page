@@ -6,6 +6,10 @@ export const content = Object.freeze({
     "language.toggle": "In English",
     "language.toggleLabel": "Vaihda kieli englanniksi",
 
+    "copy.label": "Kopioi",
+    "copy.done": "Kopioitu",
+    "copy.failed": "Ei onnistunut, kopioi käsin",
+
     "hero.title": "Tuomaksen syöpämatka",
     "hero.intro": "[TÄYDENNETÄÄN: lyhyt esittely Tuomaksesta ja keräyksen tarkoituksesta.]",
     "hero.cta": "Näin voit auttaa",
@@ -75,6 +79,10 @@ export const content = Object.freeze({
     "meta.description": "Support Tuomas Lappalainen's immunological cancer treatment in Germany.",
     "language.toggle": "Suomeksi",
     "language.toggleLabel": "Switch language to Finnish",
+
+    "copy.label": "Copy",
+    "copy.done": "Copied",
+    "copy.failed": "Didn't work, copy by hand",
 
     "hero.title": "Tuomas' cancer journey",
     "hero.intro": "[TO BE ADDED: a short introduction to Tuomas and the purpose of the collection.]",

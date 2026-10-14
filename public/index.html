@@ -63,10 +63,28 @@
             <h3 id="donation-title" data-i18n="donation.heading"></h3>
             <p data-i18n="donation.body"></p>
             <dl class="details">
-              <dt data-i18n="donation.accountLabel"></dt>
-              <dd data-i18n="donation.account"></dd>
-              <dt data-i18n="donation.recipientLabel"></dt>
-              <dd data-i18n="donation.recipient"></dd>
+              <dt id="donation-account-label" data-i18n="donation.accountLabel"></dt>
+              <dd class="copyable">
+                <span id="donation-account" data-i18n="donation.account"></span>
+                <button
+                  type="button"
+                  class="copy-button"
+                  data-copy-target="donation-account"
+                  aria-describedby="donation-account-label"
+                  data-i18n="copy.label"
+                ></button>
+              </dd>
+              <dt id="donation-recipient-label" data-i18n="donation.recipientLabel"></dt>
+              <dd class="copyable">
+                <span id="donation-recipient" data-i18n="donation.recipient"></span>
+                <button
+                  type="button"
+                  class="copy-button"
+                  data-copy-target="donation-recipient"
+                  aria-describedby="donation-recipient-label"
+                  data-i18n="copy.label"
+                ></button>
+              </dd>
             </dl>
             <p class="small" data-i18n="donation.organizer"></p>
           </article>
@@ -77,10 +95,28 @@
             <dl class="details">
               <dt data-i18n="access.amountLabel"></dt>
               <dd data-i18n="access.amount"></dd>
-              <dt data-i18n="access.accountLabel"></dt>
-              <dd data-i18n="access.account"></dd>
-              <dt data-i18n="access.recipientLabel"></dt>
-              <dd data-i18n="access.recipient"></dd>
+              <dt id="access-account-label" data-i18n="access.accountLabel"></dt>
+              <dd class="copyable">
+                <span id="access-account" data-i18n="access.account"></span>
+                <button
+                  type="button"
+                  class="copy-button"
+                  data-copy-target="access-account"
+                  aria-describedby="access-account-label"
+                  data-i18n="copy.label"
+                ></button>
+              </dd>
+              <dt id="access-recipient-label" data-i18n="access.recipientLabel"></dt>
+              <dd class="copyable">
+                <span id="access-recipient" data-i18n="access.recipient"></span>
+                <button
+                  type="button"
+                  class="copy-button"
+                  data-copy-target="access-recipient"
+                  aria-describedby="access-recipient-label"
+                  data-i18n="copy.label"
+                ></button>
+              </dd>
             </dl>
 
             <h4 data-i18n="access.stepsHeading"></h4>
@@ -145,10 +181,19 @@
                 data-i18n="message.outputLabel"
               ></p>
               <p
+                id="message-output"
                 class="message-output"
                 aria-labelledby="message-output-label"
                 data-message-output
               ></p>
+              <button
+                type="button"
+                class="copy-button"
+                data-copy-target="message-output"
+                aria-describedby="message-output-label"
+                data-i18n="copy.label"
+                disabled
+              ></button>
 
               <p class="notice" data-i18n="message.fallback"></p>
             </div>
