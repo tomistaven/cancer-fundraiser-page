@@ -35,6 +35,7 @@ The site is fully static: HTML, CSS and vanilla JavaScript on Firebase Hosting, 
 | Payment message helper | Builds `<name>, vastikkeellinen keräys Tuomas Lappalaiselle, @<username>` from two inputs, with validation |
 | Copy buttons           | One-click copy for both account numbers, the recipient and the payment message                             |
 | Instagram QR           | In the paid-access card: QR code and button that open Tuomas's profile, so the payer can send the request  |
+| Thank-you note         | Right side of the QR band (paid tab): photo and a short thank-you from Tuomas, `thanks.*` keys             |
 | Story carousel         | Diagnosis, treatment and current status as swipeable cards with tabs, plus arrows on desktop               |
 | Share menu             | "Jaa sivu": copy link, WhatsApp, Facebook, Threads, X, email, and the device's share sheet where available |
 | Finnish / English      | Finnish by default; the choice is remembered in the browser                                                |
@@ -53,7 +54,7 @@ Browser ──► Firebase Hosting (static files only)
 ```text
 public/
   index.html
-  assets/                      Instagram QR code and hero photo
+  assets/                      Instagram QR code, hero, story and thank-you photos
   css/styles.css
   fonts/                       Fraunces and Figtree (woff2, latin subset) + OFL licences
   js/
@@ -164,7 +165,7 @@ firebase deploy --only hosting
 
 - **Text, account details and "last updated" dates:** `public/js/content.js`. Edit both `fi` and `en`; they must keep the same keys.
 - **Hero photo:** `public/assets/main.jpg`, 4:3 (1000 × 750 px) with no metadata. To replace it, overwrite the file with another 4:3 image of the same size, or update `width` and `height` on the `<img class="hero-photo">` in `index.html`. The alt text is the `hero.photoAlt` key.
-- **Story card photos:** `diagnosis-1.jpg` to `diagnosis-3.jpg` and `status-1.jpg`, `status-2.jpg` in `public/assets/`, square, 700–800 px, about 60–120 KB each, metadata stripped. They sit in `<div class="story-photos">` in the diagnosis and status cards, and each has an alt text key (`diagnosis.photo1Alt` and so on) in both languages.
+- **Story card photos:** `diagnosis-1.jpg` to `diagnosis-3.jpg` and `status-1.jpg`, `status-2.jpg` in `public/assets/`, square, 700–800 px, about 60–120 KB each, metadata stripped. They sit in `<div class="story-photos">` in the diagnosis and status cards, and each has an alt text key (`diagnosis.photo1Alt` and so on) in both languages. `thanks.jpg` (400 px square, about 35 KB) is the thank-you note's photo, with the alt key `thanks.photoAlt`.
 - **Instagram link in the footer:** the paragraph is hidden; remove `hidden` from it to show it.
 - **Account numbers:** `public/js/content.js`, never anywhere else.
 

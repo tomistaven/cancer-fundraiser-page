@@ -851,6 +851,36 @@ a.button:not([href]) {
   border-radius: 12px;
 }
 
+/* Thank-you note: stacked under the QR on narrow screens, in its own column
+   beside it on desktop. */
+.thanks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  order: 2;
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--color-line);
+}
+
+.thanks img {
+  display: block;
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.thanks h4 {
+  margin-bottom: 0.35rem;
+}
+
+.thanks p {
+  margin: 0;
+}
+
 /* Payment message builder */
 .message-builder {
   padding: clamp(1.25rem, 3vw, 1.75rem);
@@ -1148,12 +1178,12 @@ a.button:not([href]) {
   .qr-box {
     grid-column: 1 / -1;
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: auto minmax(0, 0.8fr) minmax(0, 1.4fr);
     grid-template-areas:
-      "qr heading"
-      "qr text"
-      "qr handle"
-      "qr button";
+      "qr heading thanks"
+      "qr text thanks"
+      "qr handle thanks"
+      "qr button thanks";
     align-content: center;
     column-gap: var(--space-4);
     padding: 1.5rem 2rem;
@@ -1182,6 +1212,22 @@ a.button:not([href]) {
   .qr-box .button {
     grid-area: button;
     justify-self: start;
+  }
+
+  .thanks {
+    grid-area: thanks;
+    flex-direction: row;
+    gap: var(--space-2);
+    margin-top: 0;
+    padding-top: 0;
+    padding-left: var(--space-4);
+    border-top: 0;
+    border-left: 1px solid var(--color-line);
+  }
+
+  .thanks img {
+    width: 110px;
+    height: 110px;
   }
 
   .footer-grid {

@@ -38,7 +38,7 @@ export const content = Object.freeze({
     "diagnosis.dateLabel": "Diagnosoitu",
     "diagnosis.date": "9.9.2025",
     "diagnosis.photo1Alt":
-      "Tuomas istuu sohvalla ja pitää sylissään pientä valkoista koiraa",
+      "Tuomas veneessä lippalakki ja aurinkolasit päässä, sylissään pieni valkoinen koira pelastusliivissä, taustalla järvi",
     "diagnosis.photo2Alt":
       "Käsivarsi sairaalassa: iho on punoittava ja kädessä on kanyyli",
     "diagnosis.photo3Alt":
@@ -106,6 +106,11 @@ export const content = Object.freeze({
     "access.qrText": "Skannaa koodi tai avaa profiili.",
     "access.qrHandle": "@tuomaksensyopamatkassa",
     "access.qrButton": "Avaa Instagram",
+    "thanks.heading": "Kiitos",
+    "thanks.text":
+      "Kiitos, että pysähdyit tutustumaan sivuun. Se merkitsee paljon, oli kyse sitten lahjoituksesta tai pelkästä ystävällisestä ajatuksesta. – Tuomas",
+    "thanks.photoAlt":
+      "Tuomas istuu sohvalla ja pitää sylissään pientä valkoista koiraa",
     "access.qrAlt": "QR-koodi Tuomaksen Instagram-profiiliin",
 
     "message.heading": "Maksun viesti",
@@ -171,7 +176,7 @@ export const content = Object.freeze({
     "diagnosis.dateLabel": "Diagnosed",
     "diagnosis.date": "9.9.2025",
     "diagnosis.photo1Alt":
-      "Tuomas sitting on a sofa holding a small white dog",
+      "Tuomas on a boat wearing a cap and sunglasses, holding a small white dog in a life jacket, with a lake behind them",
     "diagnosis.photo2Alt":
       "An arm in hospital with reddened skin and an IV cannula in the hand",
     "diagnosis.photo3Alt":
@@ -239,6 +244,11 @@ export const content = Object.freeze({
     "access.qrText": "Scan the code or open the profile.",
     "access.qrHandle": "@tuomaksensyopamatkassa",
     "access.qrButton": "Open Instagram",
+    "thanks.heading": "Thank you",
+    "thanks.text":
+      "Thank you for taking a moment to look at this page. It means a lot, whether you donate or simply send a kind thought. – Tuomas",
+    "thanks.photoAlt":
+      "Tuomas sitting on a sofa holding a small white dog",
     "access.qrAlt": "QR code for Tuomas' Instagram profile",
 
     "message.heading": "Payment message",
