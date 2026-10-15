@@ -102,7 +102,8 @@ export class I18n {
   #readStoredLanguage() {
     try {
       const stored = localStorage.getItem(STORAGE_KEY);
-      return stored in content ? stored : DEFAULT_LANGUAGE;
+      // `in` would also accept inherited names like "toString".
+      return Object.hasOwn(content, stored) ? stored : DEFAULT_LANGUAGE;
     } catch {
       return DEFAULT_LANGUAGE;
     }
