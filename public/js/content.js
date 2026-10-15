@@ -39,9 +39,10 @@ export const content = Object.freeze({
 
     "treatment.heading": "Hoito Saksassa",
     "treatment.body":
-      "[TÄYDENNETÄÄN: hoidon nimi, hoitopaikka ja mitä hoito sisältää.]",
+      "Hoito on LANEX-DC®, jossa Tuomaksen omista soluista valmistetaan dendriittisoluja. Hoitopaikka on Labor Dr. Gansauge Ulmissa, Saksassa. Hoitoon kuuluvat solujen valmistus laboratoriossa, laadunvarmistus sekä tutkimus, verinäyte, infuusiot ja ihonalaiset pistokset.",
     "treatment.costsHeading": "Kustannukset",
-    "treatment.costs": "[TÄYDENNETÄÄN: kustannuserittely ja tavoitesumma.]",
+    "treatment.costs":
+      "Laboratorion ennakkolasku (15.9.2026) on yhteensä 29\u00a0734\u00a0€: dendriittisolujen valmistus 25\u00a0594\u00a0€, solujen tutkimus- ja turvallisuustestit 2\u00a0991\u00a0€ sekä hoitotoimenpiteet ja lääkärin työ 1\u00a0149\u00a0€.",
     "treatment.studyLink": "Lue tutkimuksesta",
     "treatment.whyLink":
       "Ilta-Sanomat: miksi Suomessa käytetään alle puolta syöpähoidoista",
@@ -160,9 +161,10 @@ export const content = Object.freeze({
 
     "treatment.heading": "Treatment in Germany",
     "treatment.body":
-      "[TO BE ADDED: treatment name, institution and what the treatment involves.]",
+      "The treatment is LANEX-DC®, in which dendritic cells are made from Tuomas' own cells. It is given at Labor Dr. Gansauge in Ulm, Germany. It includes making the cells in the laboratory, quality control, and an examination, a blood draw, infusions and subcutaneous injections.",
     "treatment.costsHeading": "Costs",
-    "treatment.costs": "[TO BE ADDED: cost breakdown and target amount.]",
+    "treatment.costs":
+      "The laboratory's pro forma invoice (15.9.2026) totals 29\u00a0734\u00a0€: making the dendritic cells 25\u00a0594\u00a0€, cell characterisation and safety tests 2\u00a0991\u00a0€, and treatment procedures and medical consultation 1\u00a0149\u00a0€.",
     "treatment.studyLink": "Read about the study",
     "treatment.whyLink":
       "Ilta-Sanomat (in Finnish): why fewer than half of cancer treatments are used in Finland",
