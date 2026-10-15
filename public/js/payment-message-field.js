@@ -21,7 +21,8 @@ export class PaymentMessageField {
 
   /**
    * @param {HTMLElement} container
-   * @param {import("./payment-message-builder.js").PaymentMessageBuilder} builder
+   * @param {import("./payment-message-builder.js")
+   *   .PaymentMessageBuilder} builder
    * @param {import("./i18n.js").I18n} i18n
    */
   constructor(container, builder, i18n) {

@@ -23,6 +23,7 @@ export class PaymentMessageBuilder {
   build(name, handle) {
     const cleanName = this.#normaliseName(name);
     const cleanHandle = this.#normaliseHandle(handle);
+    const purpose = PaymentMessageBuilder.#PURPOSE;
     const errors = [];
 
     if (!this.#isValidName(cleanName)) {
@@ -39,7 +40,7 @@ export class PaymentMessageBuilder {
 
     return {
       ok: true,
-      message: `${cleanName}, ${PaymentMessageBuilder.#PURPOSE}, @${cleanHandle}`,
+      message: `${cleanName}, ${purpose}, @${cleanHandle}`,
     };
   }
 

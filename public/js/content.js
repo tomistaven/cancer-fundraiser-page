@@ -1,4 +1,5 @@
-// Flat keys match the data-i18n attributes one to one, so a missing translation is easy to spot.
+// Flat keys match the data-i18n attributes one to one, so a missing
+// translation is easy to spot.
 export const content = Object.freeze({
   fi: Object.freeze({
     "meta.title": "Tuomaksen syöpämatka",
