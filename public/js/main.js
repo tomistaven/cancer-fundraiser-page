@@ -2,7 +2,7 @@ import { ClipboardButton } from "./clipboard-button.js";
 import { I18n } from "./i18n.js";
 import { PaymentMessageBuilder } from "./payment-message-builder.js";
 import { PaymentMessageField } from "./payment-message-field.js";
-import { ShareButton } from "./share-button.js";
+import { ShareMenu } from "./share-menu.js";
 import { SnapCarousel } from "./snap-carousel.js";
 import { TabSwitcher } from "./tab-switcher.js";
 
@@ -34,4 +34,4 @@ messageField.onChange((message) => {
 
 messageField.start();
 
-new ShareButton(document.querySelector("[data-share-button]"), i18n).start();
+new ShareMenu(document.querySelector("[data-share-menu]"), i18n).start();

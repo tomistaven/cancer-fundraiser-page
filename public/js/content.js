@@ -7,8 +7,15 @@ export const content = Object.freeze({
     "language.toggle": "In English",
     "language.toggleLabel": "Vaihda kieli englanniksi",
     "share.label": "Jaa sivu",
+    "share.copy": "Kopioi linkki",
     "share.copied": "Linkki kopioitu",
-    "share.failed": "Ei onnistunut, kopioi osoite käsin",
+    "share.failed": "Ei onnistunut, kopioi osoite osoiteriviltä",
+    "share.whatsapp": "WhatsApp",
+    "share.facebook": "Facebook",
+    "share.x": "X",
+    "share.email": "Sähköposti",
+    "share.print": "Tulosta",
+    "share.more": "Muut sovellukset",
 
     "copy.label": "Kopioi",
     "copy.done": "Kopioitu",
@@ -82,8 +89,8 @@ export const content = Object.freeze({
       "Tuomas hyväksyy sinut seuraajakseen Instagramissa, kun maksu näkyy hänen tiliotteellaan.",
 
     "access.qrHeading": "Seuraa Instagramissa",
-    "access.qrText":
-      "Maksun jälkeen: skannaa koodi tai avaa profiili ja lähetä seurauspyyntö.",
+    "access.qrText": "Skannaa koodi tai avaa profiili.",
+    "access.qrHandle": "@tuomaksensyopamatkassa",
     "access.qrButton": "Avaa Instagram",
     "access.qrAlt": "QR-koodi Tuomaksen Instagram-profiiliin",
 
@@ -120,8 +127,15 @@ export const content = Object.freeze({
     "language.toggle": "Suomeksi",
     "language.toggleLabel": "Switch language to Finnish",
     "share.label": "Share page",
+    "share.copy": "Copy link",
     "share.copied": "Link copied",
-    "share.failed": "Didn't work, copy the address by hand",
+    "share.failed": "Didn't work, copy the address from the address bar",
+    "share.whatsapp": "WhatsApp",
+    "share.facebook": "Facebook",
+    "share.x": "X",
+    "share.email": "Email",
+    "share.print": "Print",
+    "share.more": "Other apps",
 
     "copy.label": "Copy",
     "copy.done": "Copied",
@@ -195,8 +209,8 @@ export const content = Object.freeze({
       "Tuomas accepts you as his follower on Instagram once the payment shows on his bank statement.",
 
     "access.qrHeading": "Follow on Instagram",
-    "access.qrText":
-      "After paying: scan the code or open the profile and send a follow request.",
+    "access.qrText": "Scan the code or open the profile.",
+    "access.qrHandle": "@tuomaksensyopamatkassa",
     "access.qrButton": "Open Instagram",
     "access.qrAlt": "QR code for Tuomas' Instagram profile",
 

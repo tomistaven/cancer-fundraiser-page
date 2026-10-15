@@ -20,12 +20,88 @@
         <div class="hero-title-row">
           <h1 id="hero-title" data-i18n="hero.title"></h1>
           <div class="header-utilities">
-            <button
-              type="button"
-              class="utility-button"
-              data-share-button
-              data-i18n="share.label"
-            ></button>
+            <div class="share-menu" data-share-menu>
+              <button
+                type="button"
+                class="utility-button"
+                aria-expanded="false"
+                aria-controls="share-panel"
+                data-share-toggle
+                data-i18n="share.label"
+              ></button>
+              <div
+                id="share-panel"
+                class="share-panel"
+                data-share-panel
+                hidden
+              >
+                <ul class="share-list">
+                  <li>
+                    <button
+                      type="button"
+                      class="share-item"
+                      data-share-action="copy"
+                      data-i18n="share.copy"
+                    ></button>
+                  </li>
+                  <li>
+                    <a
+                      class="share-item"
+                      target="_blank"
+                      rel="noopener"
+                      data-share-target="whatsapp"
+                      data-i18n="share.whatsapp"
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      class="share-item"
+                      target="_blank"
+                      rel="noopener"
+                      data-share-target="facebook"
+                      data-i18n="share.facebook"
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      class="share-item"
+                      target="_blank"
+                      rel="noopener"
+                      data-share-target="x"
+                      data-i18n="share.x"
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      class="share-item"
+                      data-share-target="email"
+                      data-i18n="share.email"
+                    ></a>
+                  </li>
+                  <li>
+                    <button
+                      type="button"
+                      class="share-item"
+                      data-share-action="print"
+                      data-i18n="share.print"
+                    ></button>
+                  </li>
+                  <li data-share-native hidden>
+                    <button
+                      type="button"
+                      class="share-item"
+                      data-share-action="native"
+                      data-i18n="share.more"
+                    ></button>
+                  </li>
+                </ul>
+                <p
+                  class="share-status"
+                  role="status"
+                  data-share-status
+                ></p>
+              </div>
+            </div>
             <button
               type="button"
               class="utility-button"
@@ -33,7 +109,6 @@
               data-i18n="language.toggle"
               data-i18n-attr="aria-label:language.toggleLabel"
             ></button>
-            <span class="share-status" role="status" data-share-status></span>
           </div>
         </div>
 
@@ -373,6 +448,7 @@
               <div class="qr-box">
                 <h4 data-i18n="access.qrHeading"></h4>
                 <p data-i18n="access.qrText"></p>
+                <p class="qr-handle" data-i18n="access.qrHandle"></p>
                 <img
                   class="qr-image"
                   src="assets/tuomaksensyopamatkassa_qr.png"
