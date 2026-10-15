@@ -190,6 +190,7 @@ main {
 
 /* Header buttons */
 .header-utilities {
+  position: relative;
   display: flex;
   gap: 0.5rem;
   align-items: center;
@@ -207,13 +208,45 @@ main {
   font-weight: 600;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(28, 43, 34, 0.05);
-  transition: transform 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+  transition:
+    transform 0.15s ease,
+    border-color 0.15s ease,
+    background-color 0.15s ease;
 }
 
 .utility-button:hover {
   border-color: var(--color-glow);
   background: rgba(243, 239, 230, 0.14);
   transform: translateY(-1px);
+}
+
+/* Out of the flow, so feedback of any length can't resize the title row
+   and make the title wrap. */
+.share-status {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  z-index: 3;
+  width: max-content;
+  max-width: min(20rem, calc(100vw - 2 * var(--gutter)));
+  margin: 0;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--color-glow);
+  border-radius: var(--radius-control);
+  background: var(--color-canvas-deep);
+  color: var(--color-canvas-ink);
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.4;
+  box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+
+/* Hidden with opacity, not display, so the live region stays in the
+   accessibility tree and its next message is announced. */
+.share-status:empty {
+  opacity: 0;
 }
 
 .noscript {
