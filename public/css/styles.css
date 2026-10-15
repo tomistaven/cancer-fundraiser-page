@@ -600,7 +600,7 @@ a.button:not([href]) {
   );
 }
 
-.story-card--status .badge {
+.story-card .badge {
   display: inline-block;
   color: #ffffff;
   margin-bottom: 0.75rem;
@@ -1224,7 +1224,7 @@ a.button:not([href]) {
     break-inside: avoid;
   }
 
-  .story-card--status .badge {
+  .story-card .badge {
     padding: 0;
     background: none;
     color: #000000;
