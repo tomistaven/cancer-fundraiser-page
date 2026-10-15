@@ -53,7 +53,7 @@ Browser ──► Firebase Hosting (static files only)
 ```text
 public/
   index.html
-  assets/                      Instagram QR code (hero photo later)
+  assets/                      Instagram QR code and hero photo
   css/styles.css
   fonts/                       Fraunces and Figtree (woff2, latin subset) + OFL licences
   js/
@@ -163,7 +163,8 @@ firebase deploy --only hosting
 ### Updating content
 
 - **Text, account details and "last updated" dates:** `public/js/content.js`. Edit both `fi` and `en`; they must keep the same keys.
-- **Hero photo:** put the image in `public/assets/`. In `index.html`, replace the `<div class="photo-placeholder">` inside `<figure class="hero-media">` with `<img class="hero-photo" src="assets/<file>" width="<w>" height="<h>" data-i18n-attr="alt:hero.photoAlt" />`. The `hero.photoAlt` key already exists in both languages. Keep the image at roughly twice its display size.
+- **Hero photo:** `public/assets/main.jpg`, 4:3 (1000 × 750 px) with no metadata. To replace it, overwrite the file with another 4:3 image of the same size, or update `width` and `height` on the `<img class="hero-photo">` in `index.html`. The alt text is the `hero.photoAlt` key.
+- **Story card photos:** `diagnosis-1.jpg` to `diagnosis-3.jpg` and `status-1.jpg`, `status-2.jpg` in `public/assets/`, square, 700–800 px, about 60–120 KB each, metadata stripped. They sit in `<div class="story-photos">` in the diagnosis and status cards, and each has an alt text key (`diagnosis.photo1Alt` and so on) in both languages.
 - **Instagram link in the footer:** the paragraph is hidden; remove `hidden` from it to show it.
 - **Account numbers:** `public/js/content.js`, never anywhere else.
 

@@ -31,13 +31,18 @@ export const content = Object.freeze({
     "hero.cta": "Näin voit auttaa",
     "hero.articleLink": "Lue juttu Ilta-Sanomista",
     "hero.photoAlt": "Tuomas Lappalainen",
-    "hero.photoPlaceholder": "[TÄYDENNETÄÄN: kuva Tuomaksesta]",
 
     "diagnosis.heading": "Diagnoosi",
     "diagnosis.body":
       "Tuomaksella on edennyt sappitiesyöpä (kolangiokarsinooma). Se löytyi vatsakipujen syytä tutkittaessa. Hoitona on ollut sisplatiini-gemsitabiini-solunsalpaajahoito (Cis-Gem), jonka tavoitteena on hidastaa tautia. Geenitutkimuksessa löytyi FGFR2::BICC1-geenifuusio. Tuomaksen vointi on ollut hyvä.",
     "diagnosis.dateLabel": "Diagnosoitu",
     "diagnosis.date": "9.9.2025",
+    "diagnosis.photo1Alt":
+      "Tuomas istuu sohvalla ja pitää sylissään pientä valkoista koiraa",
+    "diagnosis.photo2Alt":
+      "Käsivarsi sairaalassa: iho on punoittava ja kädessä on kanyyli",
+    "diagnosis.photo3Alt":
+      "Näytöltä kuvattu poikkileikkauskuva vatsan yläosasta",
 
     "treatment.heading": "Hoito Saksassa",
     "treatment.body":
@@ -54,6 +59,10 @@ export const content = Object.freeze({
       "Tilanne stabiili. Sytostaattihoito gemsitabiinilla menossa. Pieniä kasvamisen merkkejä pääkasvaimessa ja satelliittipesäkkeen kasvua. Yhdessä imusolmukkeessa mahdollinen etäpesäke. Seuraava TT-kuvaus 2.11.2026.",
     "status.updatedLabel": "Päivitetty",
     "status.updatedDate": "15.10.2026",
+    "status.photo1Alt":
+      "Tuomas seisoo sairaalan pesuhuoneen peilin edessä infuusiotelineen vieressä",
+    "status.photo2Alt":
+      "Kanyyli ja infuusioletku kiinnitettynä käteen sairaalassa",
 
     "story.tabDiagnosis": "Diagnoosi",
     "story.tabTreatment": "Hoito Saksassa",
@@ -155,13 +164,18 @@ export const content = Object.freeze({
     "hero.cta": "How you can help",
     "hero.articleLink": "Read the Ilta-Sanomat article",
     "hero.photoAlt": "Tuomas Lappalainen",
-    "hero.photoPlaceholder": "[TO BE ADDED: photo of Tuomas]",
 
     "diagnosis.heading": "Diagnosis",
     "diagnosis.body":
       "Tuomas has advanced bile duct cancer (cholangiocarcinoma). It was found while the cause of his abdominal pain was being investigated. His treatment has been cisplatin and gemcitabine chemotherapy (Cis-Gem), which aims to slow the disease. A gene test found an FGFR2::BICC1 gene fusion. His condition has been good.",
     "diagnosis.dateLabel": "Diagnosed",
     "diagnosis.date": "9.9.2025",
+    "diagnosis.photo1Alt":
+      "Tuomas sitting on a sofa holding a small white dog",
+    "diagnosis.photo2Alt":
+      "An arm in hospital with reddened skin and an IV cannula in the hand",
+    "diagnosis.photo3Alt":
+      "A cross-section scan image of the upper abdomen, photographed from a screen",
 
     "treatment.heading": "Treatment in Germany",
     "treatment.body":
@@ -178,6 +192,10 @@ export const content = Object.freeze({
       "The situation is stable. Chemotherapy with gemcitabine is under way. There are small signs of growth in the main tumour and growth of a satellite lesion. One lymph node may contain a metastasis. The next CT scan is on 2.11.2026.",
     "status.updatedLabel": "Updated",
     "status.updatedDate": "15.10.2026",
+    "status.photo1Alt":
+      "Tuomas in a hospital bathroom mirror, standing next to an infusion stand",
+    "status.photo2Alt":
+      "An IV cannula and tubing taped to a hand in hospital",
 
     "story.tabDiagnosis": "Diagnosis",
     "story.tabTreatment": "Treatment",
