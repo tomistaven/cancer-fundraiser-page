@@ -19,9 +19,9 @@ Bilingual (Finnish / English) single-page website that collects support for Tuom
 
 ## Project Overview
 
-The site offers two separate ways to help, each with its own bank account: an open donation with nothing in return, and a 30 € paid access to follow Tuomas's journey on his Instagram Close Friends list.
+The site offers two separate ways to help, each with its own bank account: an open donation (a registered pienkeräys, with nothing in return), and a 30 € paid access to follow Tuomas's journey on his private Instagram account.
 
-People who pay for access put their name and Instagram username in the bank payment message, in the format Tuomas asked for. The page builds that message for them. Tuomas reads it from his bank statement and adds the person by hand.
+People who pay for access put their name and Instagram username in the bank payment message, in the format Tuomas asked for. The page builds that message for them. Tuomas reads it from his bank statement and approves the person's follow request by hand.
 
 The site is fully static: HTML, CSS and vanilla JavaScript on Firebase Hosting, with no backend, no build step and nothing sent from the page.
 
@@ -34,9 +34,11 @@ The site is fully static: HTML, CSS and vanilla JavaScript on Firebase Hosting, 
 | Two support options    | Donation and paid access as tabs, donation selected by default; separate accounts, clearly labelled        |
 | Payment message helper | Builds `<name>, vastikkeellinen keräys Tuomas Lappalaiselle, @<username>` from two inputs, with validation |
 | Copy buttons           | One-click copy for both account numbers, the recipient and the payment message                             |
+| Instagram QR           | In the paid-access card: QR code and button that open Tuomas's profile, so the payer can send the request  |
 | Story carousel         | Diagnosis, treatment and current status as swipeable cards with tabs, plus arrows on desktop               |
+| Share menu             | "Jaa sivu": copy link, WhatsApp, Facebook, Threads, X, email, and the device's share sheet where available |
 | Finnish / English      | Finnish by default; the choice is remembered in the browser                                                |
-| Privacy                | No forms, cookies, analytics or third-party requests. Fonts are self-hosted                                |
+| Privacy                | No forms, cookies, analytics or third-party requests. Fonts and images are self-hosted                     |
 | Accessibility          | Real buttons and ARIA tabs, keyboard support, visible focus, reduced motion respected, contrast ≥ 4.5:1    |
 
 ---
@@ -51,6 +53,7 @@ Browser ──► Firebase Hosting (static files only)
 ```text
 public/
   index.html
+  assets/                      Instagram QR code (hero photo later)
   css/styles.css
   fonts/                       Fraunces and Figtree (woff2, latin subset) + OFL licences
   js/
@@ -60,6 +63,8 @@ public/
     payment-message-builder.js PaymentMessageBuilder: validates input, builds the message
     payment-message-field.js   PaymentMessageField: inputs, live message, errors
     clipboard-button.js        ClipboardButton: copy with translated feedback
+    share-menu.js              ShareMenu: "Jaa sivu" disclosure menu
+    share-targets.js           ShareTargets: builds the share links for each service
     snap-carousel.js           SnapCarousel: story cards, tabs, arrows
     tab-switcher.js            TabSwitcher: accessible tabs for the support options
 firebase.json                  Hosting config, security headers, cache rules
@@ -69,7 +74,7 @@ firebase.json                  Hosting config, security headers, cache rules
 
 **Content.** `content.js` holds every string under flat keys (`hero.title`, `access.step1`). Elements reference them with `data-i18n` (text) and `data-i18n-attr` (attributes). The only hardcoded text in the HTML is the bilingual `<noscript>` notice.
 
-**Without JavaScript** the carousel navigation and tabs stay hidden, both support cards show, and the story cards can still be scrolled sideways.
+**Without JavaScript** the carousel navigation and tabs stay hidden, both support cards show, and the story cards can still be scrolled sideways. Page text is filled in by JavaScript, so the text itself needs it.
 
 ---
 
@@ -130,7 +135,7 @@ The project runs on the free Spark plan; Hosting needs no Blaze upgrade.
 firebase hosting:channel:deploy review --expires 7d
 ```
 
-The CLI prints the preview URL. A channel can live up to 30 days and can be redeployed with the same command.
+The CLI prints the preview URL. A channel can live up to 30 days (`--expires 30d`) and can be redeployed with the same command.
 
 **Live site:**
 
@@ -148,19 +153,19 @@ firebase deploy --only hosting
 
 1. Read the story cards and choose an option under **Näin voit auttaa**.
 2. **Donation:** transfer any amount to the donation account. Nothing else is needed.
-3. **Paid access:** enter your name and Instagram username, copy the generated message, and pay 30 € to the access account with that message. If you forget the message or mistype your username, send Tuomas a direct message on Instagram from the account you want added.
+3. **Paid access:** enter your name and Instagram username, copy the generated message, and pay 30 € to the access account with that message. Then send a follow request to Tuomas's Instagram account (the QR code and button in the same card open it). If you forget the message or mistype your username, send Tuomas a direct message on Instagram from the account you want added.
 
 ### Tuomas
 
 1. Check incoming payments on the access account. The message holds the payer's name and Instagram username.
-2. Add the person to Close Friends.
+2. Approve the matching follow request on the private Instagram account. Approve only requests that match a payment.
 
 ### Updating content
 
 - **Text, account details and "last updated" dates:** `public/js/content.js`. Edit both `fi` and `en`; they must keep the same keys.
-- **Hero photo:** put the image in `public/images/`, then in `index.html` give the hero `<img>` a `src`, `width` and `height`, and remove `hidden` from its `<figure>`. The hero switches to two columns by itself.
-- **Study link:** set the `href` of the link in the treatment card and remove its `hidden` attribute.
-- **Instagram link in the footer:** set its `href` and remove `hidden` from the surrounding paragraph.
+- **Hero photo:** put the image in `public/assets/`. In `index.html`, replace the `<div class="photo-placeholder">` inside `<figure class="hero-media">` with `<img class="hero-photo" src="assets/<file>" width="<w>" height="<h>" data-i18n-attr="alt:hero.photoAlt" />`. The `hero.photoAlt` key already exists in both languages. Keep the image at roughly twice its display size.
+- **Instagram link in the footer:** the paragraph is hidden; remove `hidden` from it to show it.
+- **Account numbers:** `public/js/content.js`, never anywhere else.
 
 Then deploy again.
 
@@ -183,6 +188,14 @@ Loading Google Fonts from Google would send every visitor's IP address to Google
 ### Native scrolling for the carousel
 
 The story cards use CSS scroll-snap, so swiping is the browser's own scrolling. `SnapCarousel` only adds tabs, arrows and the "current card" marker, and tracks position from the scroll offset because two cards can be mostly visible at once when the neighbours peek in.
+
+### Private account, approved by hand
+
+An Instagram private account cannot add followers itself, so the payer sends the follow request and Tuomas approves it once the payment shows. There is no automation: it would risk the account being banned. The QR code sits in the paid-access card only, after the payment steps, so a follow request is never invited before a payment.
+
+### A share menu without third-party scripts
+
+Share widgets such as AddToAny or ShareThis load scripts and images from other sites, which the Content Security Policy and the privacy text rule out. `ShareMenu` and `ShareTargets` build ordinary outbound links, so a service only learns the page address if the visitor follows its link. Messenger and Instagram have no web share link; on phones they appear in the device's share sheet (`navigator.share`), which the menu shows only where the browser supports it.
 
 ### Kept apart on purpose
 
