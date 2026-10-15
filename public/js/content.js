@@ -27,7 +27,7 @@ export const content = Object.freeze({
 
     "hero.title": "Tuomaksen syöpämatka",
     "hero.intro":
-      "Keräyksen ensisijainen tarkoitus on kerätä Tuomas Lappalaiselle rahaa kokeellisiin syöpähoitoihin, joita saa Saksassa. Suomen julkinen terveydenhuolto ei näitä hoitoja tarjoa, ja sappitiesyöpään on Suomessa tarjolla vain hidastavaa hoitoa. Tuomas on ikänsä ja syöpämutaatioidensa puolesta sopiva uusiin hoitoihin, jotka voisivat pelastaa hänen henkensä. Kokeellisten hoitojen kokonaiskustannus on 30\u00a0000\u00a0€.",
+      "Keräyksen ensisijainen tarkoitus on kerätä Tuomas Lappalaiselle rahaa kokeellisiin syöpähoitoihin, joita saa Saksassa. Suomen julkinen terveydenhuolto ei näitä hoitoja tarjoa, ja sappitiesyöpään on Suomessa tarjolla vain hidastavaa hoitoa. Tuomas on ikänsä ja syöpämutaatioidensa puolesta sopiva uusiin hoitoihin, jotka voisivat pelastaa hänen henkensä. Yksityisesti toteutettavien kokeellisten hoitojen kustannukset ovat kuitenkin erittäin suuret, minkä vuoksi tarvitsemme apuasi.",
     "hero.cta": "Näin voit auttaa",
     "hero.articleLink": "Lue juttu Ilta-Sanomista",
     "hero.photoAlt": "Tuomas Lappalainen",
@@ -165,7 +165,7 @@ export const content = Object.freeze({
 
     "hero.title": "Tuomas' cancer journey",
     "hero.intro":
-      "The main purpose of this collection is to raise money for Tuomas Lappalainen's experimental cancer treatments, which are available in Germany. Finland's public healthcare does not offer them, and in Finland the only treatment available for bile duct cancer slows the disease. Given his age and his cancer's mutations, Tuomas is suitable for new treatments that could save his life. The total cost of the experimental treatments is 30\u00a0000\u00a0€.",
+      "The main purpose of this collection is to raise money for Tuomas Lappalainen's experimental cancer treatments, which are available in Germany. Finland's public healthcare does not offer them, and in Finland the only treatment available for bile duct cancer slows the disease. Given his age and his cancer's mutations, Tuomas is suitable for new treatments that could save his life. However, the costs of these privately funded experimental treatments are substantial, which is why we need your help.",
     "hero.cta": "How you can help",
     "hero.articleLink": "Read the Ilta-Sanomat article",
     "hero.photoAlt": "Tuomas Lappalainen",
