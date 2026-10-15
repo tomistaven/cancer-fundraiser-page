@@ -81,7 +81,7 @@ export const content = Object.freeze({
     "footer.privacyHeading": "Tietosuoja",
     "footer.privacy": "Sivusto ei kerää tietojasi: siinä ei ole lomakkeita, evästeitä, analytiikkaa eikä ulkopuolisia skriptejä tai fontteja. Maksun viestiä varten kirjoittamasi nimi ja käyttäjänimi eivät lähde selaimestasi, ja kielivalinta tallentuu vain selaimeesi. Maksut menevät suoraan Tuomaksen tileille, ja hän näkee maksajan nimen ja viestin tiliotteellaan. Instagram-käyttäjänimeä hän käyttää vain hyväksyäkseen sinut seuraajakseen. Palvelin, Googlen Firebase Hosting, käsittelee kävijöiden IP-osoitteita väärinkäytösten estämiseksi ja käyttötilastoja varten ja säilyttää niitä Googlen mukaan muutaman kuukauden.",
     "footer.updatedLabel": "Sivu päivitetty",
-    "footer.updatedDate": "[pp.kk.vvvv]",
+    "footer.updatedDate": "15.10.2026",
   }),
 
   en: Object.freeze({
@@ -165,6 +165,6 @@ export const content = Object.freeze({
     "footer.privacyHeading": "Privacy",
     "footer.privacy": "The site collects nothing about you: it has no forms, cookies, analytics, or third-party scripts or fonts. The name and username you type for the payment message never leave your browser, and your language choice is stored only in your browser. Payments go directly to Tuomas' accounts, and he sees the payer's name and message on his bank statement. He uses the Instagram username only to accept you as a follower. The server, Google's Firebase Hosting, processes visitors' IP addresses to prevent abuse and for usage statistics, and according to Google keeps them for a few months.",
     "footer.updatedLabel": "Page updated",
-    "footer.updatedDate": "[dd.mm.yyyy]",
+    "footer.updatedDate": "15.10.2026",
   }),
 });
