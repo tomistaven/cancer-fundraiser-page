@@ -2,7 +2,7 @@
 export const content = Object.freeze({
   fi: Object.freeze({
     "meta.title": "Tuomaksen syöpämatka",
-    "meta.description": "Tue Tuomas Lappalaisen immunologista syöpähoitoa Saksassa.",
+    "meta.description": "Tue Tuomas Lappalaisen kokeellisia syöpähoitoja Saksassa.",
     "language.toggle": "In English",
     "language.toggleLabel": "Vaihda kieli englanniksi",
 
@@ -14,7 +14,7 @@ export const content = Object.freeze({
     "carousel.next": "Seuraava kortti",
 
     "hero.title": "Tuomaksen syöpämatka",
-    "hero.intro": "[TÄYDENNETÄÄN: lyhyt esittely Tuomaksesta ja keräyksen tarkoituksesta.]",
+    "hero.intro": "Keräyksen ensisijainen tarkoitus on kerätä Tuomas Lappalaiselle rahaa kokeellisiin syöpähoitoihin, joita saa Saksassa. Suomen julkinen terveydenhuolto ei näitä hoitoja tarjoa, ja sappitiesyöpään on Suomessa tarjolla vain hidastavaa hoitoa. Tuomas on ikänsä ja syöpämutaatioidensa puolesta sopiva uusiin hoitoihin, jotka voisivat pelastaa hänen henkensä. Kokeellisten hoitojen kokonaiskustannus on 30\u00a0000\u00a0€.",
     "hero.cta": "Näin voit auttaa",
     "hero.photoAlt": "Tuomas Lappalainen",
 
@@ -48,10 +48,10 @@ export const content = Object.freeze({
     "donation.account": "FI55 5500 3920 3042 33",
     "donation.recipientLabel": "Saaja",
     "donation.recipient": "Tuomas Lappalainen",
-    "donation.organizer": "[TÄYDENNETÄÄN: keräyksen järjestäjän tiedot]",
+    "donation.organizer": "Pienkeräysnumero RA/2026/1363. Keräyksen järjestäjät: Tuomas Lappalainen, Ritva Lappalainen ja Pertti Lappalainen.",
 
     "access.heading": "Seuraa Tuomaksen matkaa\u00a0(30\u00a0€)",
-    "access.body": "Maksamalla 30 € pääset seuraamaan Tuomaksen hoitomatkaa hänen Instagramin Close Friends -listallaan. Tämä on vastikkeellinen keräys.",
+    "access.body": "Maksamalla 30 € pääset Tuomaksen Instagram-seuraajaksi ja voit seurata hänen hoitomatkaansa. Tämä on vastikkeellinen keräys.",
     "access.accountLabel": "Tilinumero",
     "access.account": "FI77 5500 3920 3042 25",
     "access.recipientLabel": "Saaja",
@@ -61,7 +61,7 @@ export const content = Object.freeze({
     "access.stepsHeading": "Näin se toimii",
     "access.step1": "Muodosta maksun viesti nimelläsi ja Instagram-käyttäjänimelläsi ja kopioi se.",
     "access.step2": "Maksa 30 € tilisiirrolla yllä olevalle tilille ja liitä viesti maksun viestikenttään.",
-    "access.step3": "Tuomas lisää sinut Close Friends -listalle, kun maksu näkyy hänen tiliotteellaan.",
+    "access.step3": "Tuomas hyväksyy sinut seuraajakseen Instagramissa, kun maksu näkyy hänen tiliotteellaan.",
 
     "message.heading": "Maksun viesti",
     "message.nameLabel": "Nimi",
@@ -76,17 +76,17 @@ export const content = Object.freeze({
     "error.invalid_instagram": "Tarkista Instagram-käyttäjänimi. Sallittuja ovat kirjaimet, numerot, piste ja alaviiva, enintään 30 merkkiä.",
 
     "footer.organizerHeading": "Järjestäjä",
-    "footer.organizer": "[TÄYDENNETÄÄN: järjestäjän nimi ja yhteystiedot]",
+    "footer.organizer": "Tuomas Lappalainen, Ritva Lappalainen ja Pertti Lappalainen. Pienkeräysnumero RA/2026/1363, keräysaika 12.10.2026–11.1.2027.",
     "footer.instagramLabel": "Tuomas Instagramissa",
     "footer.privacyHeading": "Tietosuoja",
-    "footer.privacy": "Sivusto itse ei kerää tietojasi: siinä ei ole lomakkeita, evästeitä, analytiikkaa eikä ulkopuolisia skriptejä tai fontteja. Maksun viestiä varten kirjoittamasi nimi ja Instagram-käyttäjänimi pysyvät vain omassa selaimessasi, ja kielivalinta tallennetaan selaimesi muistiin. Maksut menevät suoraan Tuomaksen pankkitileille. Tuomas näkee tiliotteellaan maksajan nimen ja viestin, ja hän käyttää Instagram-käyttäjänimeä vain lisätäkseen sinut Close Friends -listalle. Sivuston palvelin, Googlen Firebase Hosting, käsittelee kävijöiden IP-osoitteita väärinkäytösten estämiseksi ja käyttötilastoja varten ja säilyttää niitä Googlen mukaan muutaman kuukauden.",
+    "footer.privacy": "Sivusto ei kerää tietojasi: siinä ei ole lomakkeita, evästeitä, analytiikkaa eikä ulkopuolisia skriptejä tai fontteja. Maksun viestiä varten kirjoittamasi nimi ja käyttäjänimi eivät lähde selaimestasi, ja kielivalinta tallentuu vain selaimeesi. Maksut menevät suoraan Tuomaksen tileille, ja hän näkee maksajan nimen ja viestin tiliotteellaan. Instagram-käyttäjänimeä hän käyttää vain hyväksyäkseen sinut seuraajakseen. Palvelin, Googlen Firebase Hosting, käsittelee kävijöiden IP-osoitteita väärinkäytösten estämiseksi ja käyttötilastoja varten ja säilyttää niitä Googlen mukaan muutaman kuukauden.",
     "footer.updatedLabel": "Sivu päivitetty",
     "footer.updatedDate": "[pp.kk.vvvv]",
   }),
 
   en: Object.freeze({
     "meta.title": "Tuomas' cancer journey",
-    "meta.description": "Support Tuomas Lappalainen's immunological cancer treatment in Germany.",
+    "meta.description": "Support Tuomas Lappalainen's experimental cancer treatments in Germany.",
     "language.toggle": "Suomeksi",
     "language.toggleLabel": "Switch language to Finnish",
 
@@ -98,7 +98,7 @@ export const content = Object.freeze({
     "carousel.next": "Next card",
 
     "hero.title": "Tuomas' cancer journey",
-    "hero.intro": "[TO BE ADDED: a short introduction to Tuomas and the purpose of the collection.]",
+    "hero.intro": "The main purpose of this collection is to raise money for Tuomas Lappalainen's experimental cancer treatments, which are available in Germany. Finland's public healthcare does not offer them, and in Finland the only treatment available for bile duct cancer slows the disease. Given his age and his cancer's mutations, Tuomas is suitable for new treatments that could save his life. The total cost of the experimental treatments is 30\u00a0000\u00a0€.",
     "hero.cta": "How you can help",
     "hero.photoAlt": "Tuomas Lappalainen",
 
@@ -132,10 +132,10 @@ export const content = Object.freeze({
     "donation.account": "FI55 5500 3920 3042 33",
     "donation.recipientLabel": "Recipient",
     "donation.recipient": "Tuomas Lappalainen",
-    "donation.organizer": "[TO BE ADDED: collection organizer details]",
+    "donation.organizer": "Small-scale collection (pienkeräys) number RA/2026/1363. Organizers: Tuomas Lappalainen, Ritva Lappalainen and Pertti Lappalainen.",
 
     "access.heading": "Follow Tuomas' journey\u00a0(30\u00a0€)",
-    "access.body": "For 30 € you can follow Tuomas' treatment journey on his Instagram Close Friends list. This is a paid collection with access in return.",
+    "access.body": "For 30 € you can become Tuomas' Instagram follower and follow his treatment journey. This is a paid collection with access in return.",
     "access.accountLabel": "Account number",
     "access.account": "FI77 5500 3920 3042 25",
     "access.recipientLabel": "Recipient",
@@ -145,7 +145,7 @@ export const content = Object.freeze({
     "access.stepsHeading": "How it works",
     "access.step1": "Create your payment message from your name and Instagram username, and copy it.",
     "access.step2": "Pay 30 € by bank transfer to the account above and paste the message into the payment's message field.",
-    "access.step3": "Tuomas adds you to his Close Friends list once the payment shows on his bank statement.",
+    "access.step3": "Tuomas accepts you as his follower on Instagram once the payment shows on his bank statement.",
 
     "message.heading": "Payment message",
     "message.nameLabel": "Name",
@@ -160,10 +160,10 @@ export const content = Object.freeze({
     "error.invalid_instagram": "Check your Instagram username. Letters, numbers, dots and underscores are allowed, up to 30 characters.",
 
     "footer.organizerHeading": "Organizer",
-    "footer.organizer": "[TO BE ADDED: organizer name and contact details]",
+    "footer.organizer": "Tuomas Lappalainen, Ritva Lappalainen and Pertti Lappalainen. Small-scale collection (pienkeräys) number RA/2026/1363, collection period 12.10.2026–11.1.2027.",
     "footer.instagramLabel": "Tuomas on Instagram",
     "footer.privacyHeading": "Privacy",
-    "footer.privacy": "The site itself collects nothing about you: it has no forms, cookies, analytics, or third-party scripts or fonts. The name and Instagram username you type for the payment message stay in your own browser, and your language choice is stored in your browser. Payments go directly to Tuomas' bank accounts. Tuomas sees the payer's name and message on his bank statement, and uses the Instagram username only to add you to his Close Friends list. The site's server, Google's Firebase Hosting, processes visitors' IP addresses to prevent abuse and for usage statistics, and according to Google keeps them for a few months.",
+    "footer.privacy": "The site collects nothing about you: it has no forms, cookies, analytics, or third-party scripts or fonts. The name and username you type for the payment message never leave your browser, and your language choice is stored only in your browser. Payments go directly to Tuomas' accounts, and he sees the payer's name and message on his bank statement. He uses the Instagram username only to accept you as a follower. The server, Google's Firebase Hosting, processes visitors' IP addresses to prevent abuse and for usage statistics, and according to Google keeps them for a few months.",
     "footer.updatedLabel": "Page updated",
     "footer.updatedDate": "[dd.mm.yyyy]",
   }),
