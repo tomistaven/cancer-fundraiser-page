@@ -29,15 +29,15 @@ The site is fully static: HTML, CSS and vanilla JavaScript on Firebase Hosting, 
 
 ## Feature Summary
 
-| Feature | Description |
-| --- | --- |
-| Two support options | Donation and paid access as tabs, donation selected by default; separate accounts, clearly labelled |
+| Feature                | Description                                                                                                |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------- |
+| Two support options    | Donation and paid access as tabs, donation selected by default; separate accounts, clearly labelled        |
 | Payment message helper | Builds `<name>, vastikkeellinen keräys Tuomas Lappalaiselle, @<username>` from two inputs, with validation |
-| Copy buttons | One-click copy for both account numbers, the recipient and the payment message |
-| Story carousel | Diagnosis, treatment and current status as swipeable cards with tabs, plus arrows on desktop |
-| Finnish / English | Finnish by default; the choice is remembered in the browser |
-| Privacy | No forms, cookies, analytics or third-party requests. Fonts are self-hosted |
-| Accessibility | Real buttons and ARIA tabs, keyboard support, visible focus, reduced motion respected, contrast ≥ 4.5:1 |
+| Copy buttons           | One-click copy for both account numbers, the recipient and the payment message                             |
+| Story carousel         | Diagnosis, treatment and current status as swipeable cards with tabs, plus arrows on desktop               |
+| Finnish / English      | Finnish by default; the choice is remembered in the browser                                                |
+| Privacy                | No forms, cookies, analytics or third-party requests. Fonts are self-hosted                                |
+| Accessibility          | Real buttons and ARIA tabs, keyboard support, visible focus, reduced motion respected, contrast ≥ 4.5:1    |
 
 ---
 
@@ -79,10 +79,10 @@ The page has no runtime dependencies.
 
 **Development** (root `package.json`, never deployed)
 
-| Package | Purpose |
-| --- | --- |
+| Package                           | Purpose                                     |
+| --------------------------------- | ------------------------------------------- |
 | `eslint`, `@eslint/js`, `globals` | Linting with browser rules for `public/js/` |
-| `prettier` | Formatting |
+| `prettier`                        | Formatting                                  |
 
 **Fonts:** Fraunces and Figtree, SIL Open Font License 1.1 (licence files in `public/fonts/`).
 

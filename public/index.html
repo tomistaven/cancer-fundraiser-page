@@ -19,18 +19,36 @@
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-title-row">
           <h1 id="hero-title" data-i18n="hero.title"></h1>
-          <button
-            type="button"
-            class="language-toggle"
-            data-language-toggle
-            data-i18n="language.toggle"
-            data-i18n-attr="aria-label:language.toggleLabel"
-          ></button>
+          <div class="header-utilities">
+            <button
+              type="button"
+              class="utility-button"
+              data-share-button
+              data-i18n="share.label"
+            ></button>
+            <button
+              type="button"
+              class="utility-button"
+              data-language-toggle
+              data-i18n="language.toggle"
+              data-i18n-attr="aria-label:language.toggleLabel"
+            ></button>
+          </div>
         </div>
 
         <div class="hero-content">
           <p data-i18n="hero.intro"></p>
-          <a class="button" href="#support" data-i18n="hero.cta"></a>
+          <div class="hero-actions">
+            <a class="button" href="#support" data-i18n="hero.cta"></a>
+            <a
+              class="button button--ghost"
+              href=""
+              target="_blank"
+              rel="noopener"
+              data-i18n="hero.articleLink"
+              hidden
+            ></a>
+          </div>
         </div>
 
         <figure class="hero-media" hidden>
@@ -58,6 +76,12 @@
               class="pill-tab"
               data-carousel-tab="status"
               data-i18n="story.tabStatus"
+            ></button>
+            <button
+              type="button"
+              class="pill-tab"
+              data-carousel-tab="instagram-qr"
+              data-i18n="story.tabInstagram"
             ></button>
           </div>
 
@@ -105,10 +129,10 @@
             </div>
             <a
               class="study-link"
-              href=""
+              href="https://www.mdpi.com/2072-6694/18/1/123"
+              target="_blank"
               rel="noopener"
               data-i18n="treatment.studyLink"
-              hidden
             ></a>
           </section>
 
@@ -123,6 +147,33 @@
             </p>
             <h2 id="status-title" data-i18n="status.heading"></h2>
             <p data-i18n="status.body"></p>
+          </section>
+
+          <section
+            id="instagram-qr"
+            class="story-card"
+            aria-labelledby="qr-title"
+          >
+            <div class="qr-card-content">
+              <h2 id="qr-title" data-i18n="access.qrHeading"></h2>
+              <p data-i18n="access.qrText"></p>
+
+              <img
+                class="qr-image"
+                src="assets/tuomaksensyopamatkassa_qr.png"
+                width="235"
+                height="270"
+                data-i18n-attr="alt:access.qrAlt"
+              />
+
+              <a
+                class="button button--secondary"
+                href="https://www.instagram.com/tuomaksensyopamatkassa"
+                target="_blank"
+                rel="noopener"
+                data-i18n="access.qrButton"
+              ></a>
+            </div>
           </section>
         </div>
       </div>
@@ -353,17 +404,26 @@
     <footer class="site-footer">
       <div class="footer-inner">
         <div class="footer-grid">
-          <section aria-labelledby="organizer-title">
+          <section class="footer-organizer" aria-labelledby="organizer-title">
             <h2 id="organizer-title" data-i18n="footer.organizerHeading"></h2>
             <p data-i18n="footer.organizer"></p>
             <p hidden>
-              <a href="" rel="noopener" data-i18n="footer.instagramLabel"></a>
+              <a
+                href="https://www.instagram.com/tuomaksensyopamatkassa"
+                target="_blank"
+                rel="noopener"
+                data-i18n="footer.instagramLabel"
+              ></a>
             </p>
           </section>
 
           <section aria-labelledby="privacy-title">
-            <h2 id="privacy-title" data-i18n="footer.privacyHeading"></h2>
-            <p data-i18n="footer.privacy"></p>
+            <details class="privacy-accordion">
+              <summary>
+                <h2 id="privacy-title" data-i18n="footer.privacyHeading"></h2>
+              </summary>
+              <p data-i18n="footer.privacy"></p>
+            </details>
           </section>
         </div>
 
