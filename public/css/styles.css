@@ -1083,9 +1083,36 @@ a.button:not([href]) {
     flex-wrap: wrap;
   }
 
+  .hero-title-row {
+    justify-content: center;
+    text-align: center;
+  }
+
   .header-utilities {
     order: -1;
-    margin-left: auto;
+    flex-basis: 100%;
+    justify-content: center;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .donation-text h3,
+  .access-info h3 {
+    text-align: center;
+  }
+
+  .footer-organizer {
+    text-align: center;
+  }
+
+  .privacy-accordion {
+    text-align: center;
+  }
+
+  .privacy-accordion p {
+    text-align: left;
   }
 
   /* A single column keeps the tab row inside the screen, where it can
