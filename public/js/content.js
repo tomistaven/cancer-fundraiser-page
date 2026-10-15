@@ -23,6 +23,7 @@ export const content = Object.freeze({
     "hero.cta": "Näin voit auttaa",
     "hero.articleLink": "Lue juttu Ilta-Sanomista",
     "hero.photoAlt": "Tuomas Lappalainen",
+    "hero.photoPlaceholder": "[TÄYDENNETÄÄN: kuva Tuomaksesta]",
 
     "diagnosis.heading": "Diagnoosi",
     "diagnosis.body":
@@ -34,6 +35,8 @@ export const content = Object.freeze({
     "treatment.costsHeading": "Kustannukset",
     "treatment.costs": "[TÄYDENNETÄÄN: kustannuserittely ja tavoitesumma.]",
     "treatment.studyLink": "Lue tutkimuksesta",
+    "treatment.whyLink":
+      "Ilta-Sanomat: miksi Suomessa käytetään alle puolta syöpähoidoista",
 
     "status.heading": "Tilanne nyt",
     "status.body": "[TÄYDENNETÄÄN: lyhyt ajankohtainen päivitys.]",
@@ -43,7 +46,6 @@ export const content = Object.freeze({
     "story.tabDiagnosis": "Diagnoosi",
     "story.tabTreatment": "Hoito Saksassa",
     "story.tabStatus": "Tilanne nyt",
-    "story.tabInstagram": "Instagram",
 
     "support.heading": "Näin voit auttaa",
     "support.intro":
@@ -79,9 +81,9 @@ export const content = Object.freeze({
     "access.step3":
       "Tuomas hyväksyy sinut seuraajakseen Instagramissa, kun maksu näkyy hänen tiliotteellaan.",
 
-    "access.qrHeading": "Siirry Instagramiin",
+    "access.qrHeading": "Seuraa Instagramissa",
     "access.qrText":
-      "Skannaa puhelimella tai klikkaa alta avataksesi profiilin.",
+      "Maksun jälkeen: skannaa koodi tai avaa profiili ja lähetä seurauspyyntö.",
     "access.qrButton": "Avaa Instagram",
     "access.qrAlt": "QR-koodi Tuomaksen Instagram-profiiliin",
 
@@ -132,8 +134,9 @@ export const content = Object.freeze({
     "hero.intro":
       "The main purpose of this collection is to raise money for Tuomas Lappalainen's experimental cancer treatments, which are available in Germany. Finland's public healthcare does not offer them, and in Finland the only treatment available for bile duct cancer slows the disease. Given his age and his cancer's mutations, Tuomas is suitable for new treatments that could save his life. The total cost of the experimental treatments is 30\u00a0000\u00a0€.",
     "hero.cta": "How you can help",
-    "hero.articleLink": "Read the Ilta-Sanomat article",
+    "hero.articleLink": "Read the Ilta-Sanomat article (in Finnish)",
     "hero.photoAlt": "Tuomas Lappalainen",
+    "hero.photoPlaceholder": "[TO BE ADDED: photo of Tuomas]",
 
     "diagnosis.heading": "Diagnosis",
     "diagnosis.body":
@@ -145,6 +148,8 @@ export const content = Object.freeze({
     "treatment.costsHeading": "Costs",
     "treatment.costs": "[TO BE ADDED: cost breakdown and target amount.]",
     "treatment.studyLink": "Read about the study",
+    "treatment.whyLink":
+      "Ilta-Sanomat (in Finnish): why fewer than half of cancer treatments are used in Finland",
 
     "status.heading": "Current status",
     "status.body": "[TO BE ADDED: a short current update.]",
@@ -154,7 +159,6 @@ export const content = Object.freeze({
     "story.tabDiagnosis": "Diagnosis",
     "story.tabTreatment": "Treatment",
     "story.tabStatus": "Status",
-    "story.tabInstagram": "Instagram",
 
     "support.heading": "How you can help",
     "support.intro":
@@ -190,8 +194,9 @@ export const content = Object.freeze({
     "access.step3":
       "Tuomas accepts you as his follower on Instagram once the payment shows on his bank statement.",
 
-    "access.qrHeading": "Go to Instagram",
-    "access.qrText": "Scan with your phone or click below to open the profile.",
+    "access.qrHeading": "Follow on Instagram",
+    "access.qrText":
+      "After paying: scan the code or open the profile and send a follow request.",
     "access.qrButton": "Open Instagram",
     "access.qrAlt": "QR code for Tuomas' Instagram profile",
 

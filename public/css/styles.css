@@ -1,3 +1,4 @@
+/* Fonts */
 @font-face {
   font-family: "Fraunces";
   font-style: normal;
@@ -38,6 +39,7 @@
   src: url("../fonts/figtree-700.woff2") format("woff2");
 }
 
+/* Design tokens */
 :root {
   --color-canvas: #161816;
   --color-canvas-deep: #0f110f;
@@ -89,6 +91,7 @@
     0 6px 16px -4px rgba(28, 43, 34, 0.06);
 }
 
+/* Base */
 *,
 *::before,
 *::after {
@@ -178,12 +181,14 @@ a {
   color: var(--color-ink);
 }
 
+/* Layout */
 main {
   max-width: var(--page-width);
   margin: 0 auto;
   padding-inline: var(--gutter);
 }
 
+/* Header buttons */
 .header-utilities {
   display: flex;
   gap: 0.5rem;
@@ -202,10 +207,7 @@ main {
   font-weight: 600;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(28, 43, 34, 0.05);
-  transition:
-    transform 0.15s ease,
-    border-color 0.15s ease,
-    background-color 0.15s ease;
+  transition: transform 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
 }
 
 .utility-button:hover {
@@ -222,6 +224,7 @@ main {
   background: var(--color-accent-tint);
 }
 
+/* Buttons */
 .button {
   display: inline-flex;
   align-items: center;
@@ -289,6 +292,7 @@ main {
   box-shadow: 0 4px 12px rgba(28, 43, 34, 0.05);
 }
 
+/* Hero */
 .hero {
   display: grid;
   gap: 0 var(--space-4);
@@ -328,6 +332,23 @@ main {
   margin: 0;
 }
 
+/* Shows Tuomas where the photo will go until the real <img> replaces it. */
+.photo-placeholder {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 3;
+  padding: var(--space-3);
+  border: 2px dashed var(--color-canvas-line);
+  border-radius: var(--radius-card);
+  color: var(--color-canvas-muted);
+  text-align: center;
+}
+
+/* Without an href the article button stays inert until the URL is known. */
+a.button:not([href]) {
+  cursor: default;
+}
+
 .hero-photo {
   display: block;
   width: 100%;
@@ -337,6 +358,7 @@ main {
   box-shadow: var(--shadow-stage);
 }
 
+/* Story carousel */
 .story {
   position: relative;
 }
@@ -476,6 +498,7 @@ main {
   opacity: 0.5;
 }
 
+/* Cards */
 .story-card,
 .card {
   padding: var(--card-padding);
@@ -509,7 +532,8 @@ main {
 }
 
 .study-link {
-  display: inline-block;
+  display: block;
+  width: fit-content;
   margin-top: var(--space-2);
   font-weight: 600;
 }
@@ -547,6 +571,7 @@ main {
   content: " ";
 }
 
+/* Support section */
 .support {
   padding: var(--space-4) 0 var(--space-5);
 }
@@ -589,6 +614,7 @@ main {
   box-shadow: var(--shadow-stage);
 }
 
+/* Payment details */
 .details {
   display: grid;
   gap: 0.625rem;
@@ -663,6 +689,7 @@ main {
   font-size: 0.875rem;
 }
 
+/* Access card: steps and QR */
 .steps-box {
   padding: 1.125rem 1.25rem;
   border: 1px solid var(--color-line);
@@ -701,6 +728,37 @@ main {
   margin-bottom: 0;
 }
 
+/* Last in the card, so on phones it follows the message builder: build
+   the message, pay, then follow. */
+.qr-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.125rem 1.25rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-inner);
+  text-align: center;
+}
+
+.qr-box p {
+  margin-bottom: var(--space-2);
+  color: var(--color-muted);
+  font-size: 0.9375rem;
+}
+
+/* In a column flex container the image would otherwise stretch to the
+   container's height; a fixed width with the intrinsic ratio prevents it. */
+.qr-image {
+  display: block;
+  flex-shrink: 0;
+  width: 180px;
+  height: auto;
+  aspect-ratio: 235 / 270;
+  margin-bottom: 1.5rem;
+  border-radius: 12px;
+}
+
+/* Payment message builder */
 .message-builder {
   padding: clamp(1.25rem, 3vw, 1.75rem);
   border: 1px solid var(--color-line);
@@ -791,6 +849,7 @@ main {
   font-size: 0.875rem;
 }
 
+/* Footer */
 .site-footer {
   border-top: 1px solid var(--color-canvas-line);
   background: var(--color-canvas-deep);
@@ -840,6 +899,7 @@ main {
   color: var(--color-canvas-ink);
 }
 
+/* Privacy accordion */
 .privacy-accordion summary {
   cursor: pointer;
   list-style: none;
@@ -882,36 +942,7 @@ main {
   line-height: 1.5;
 }
 
-.qr-card-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  height: 100%;
-  padding: 1rem 0;
-}
-
-.qr-card-content h2 {
-  margin-bottom: 0.5rem;
-}
-
-.qr-card-content p {
-  margin-bottom: 1.5rem;
-}
-
-/* In a column flex container the image would otherwise stretch to the
-   card's height; a fixed width with the intrinsic ratio keeps it square-ish. */
-.qr-image {
-  display: block;
-  flex-shrink: 0;
-  width: 180px;
-  height: auto;
-  aspect-ratio: 235 / 270;
-  margin-bottom: 1.5rem;
-  border-radius: 12px;
-}
-
+/* Phones */
 @media (max-width: 30rem) {
   /* Two buttons don't fit beside the title on a phone, so they sit on
      their own row above it. */
@@ -953,6 +984,7 @@ main {
   }
 }
 
+/* Desktop */
 @media (min-width: 54rem) {
   .hero:has(.hero-media:not([hidden])) {
     grid-template-columns: 1.15fr 0.85fr;
@@ -998,6 +1030,10 @@ main {
   .access-grid {
     grid-template-columns: 1.05fr 0.95fr;
     align-items: start;
+  }
+
+  .qr-box {
+    grid-column: 1 / -1;
   }
 
   .footer-grid {
