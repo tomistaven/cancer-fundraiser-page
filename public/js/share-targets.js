@@ -16,7 +16,7 @@ export class ShareTargets {
   }
 
   /**
-   * @param {string} name One of whatsapp, facebook, x, email.
+   * @param {string} name One of whatsapp, facebook, threads, x, email.
    * @returns {string}
    */
   hrefFor(name) {
@@ -28,6 +28,11 @@ export class ShareTargets {
       case "facebook":
         return this.#build("https://www.facebook.com/sharer/sharer.php", {
           u: this.#url,
+        });
+      case "threads":
+        return this.#build("https://www.threads.com/intent/post", {
+          text: this.#title,
+          url: this.#url,
         });
       case "x":
         return this.#build("https://x.com/intent/tweet", {

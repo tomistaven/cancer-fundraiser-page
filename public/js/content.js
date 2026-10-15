@@ -12,9 +12,9 @@ export const content = Object.freeze({
     "share.failed": "Ei onnistunut, kopioi osoite osoiteriviltä",
     "share.whatsapp": "WhatsApp",
     "share.facebook": "Facebook",
+    "share.threads": "Threads",
     "share.x": "X",
     "share.email": "Sähköposti",
-    "share.print": "Tulosta",
     "share.more": "Muut sovellukset",
 
     "copy.label": "Kopioi",
@@ -132,9 +132,9 @@ export const content = Object.freeze({
     "share.failed": "Didn't work, copy the address from the address bar",
     "share.whatsapp": "WhatsApp",
     "share.facebook": "Facebook",
+    "share.threads": "Threads",
     "share.x": "X",
     "share.email": "Email",
-    "share.print": "Print",
     "share.more": "Other apps",
 
     "copy.label": "Copy",
@@ -148,7 +148,7 @@ export const content = Object.freeze({
     "hero.intro":
       "The main purpose of this collection is to raise money for Tuomas Lappalainen's experimental cancer treatments, which are available in Germany. Finland's public healthcare does not offer them, and in Finland the only treatment available for bile duct cancer slows the disease. Given his age and his cancer's mutations, Tuomas is suitable for new treatments that could save his life. The total cost of the experimental treatments is 30\u00a0000\u00a0€.",
     "hero.cta": "How you can help",
-    "hero.articleLink": "Read the Ilta-Sanomat article (in Finnish)",
+    "hero.articleLink": "Read the Ilta-Sanomat article",
     "hero.photoAlt": "Tuomas Lappalainen",
     "hero.photoPlaceholder": "[TO BE ADDED: photo of Tuomas]",
 
