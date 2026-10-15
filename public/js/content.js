@@ -35,7 +35,7 @@ export const content = Object.freeze({
 
     "diagnosis.heading": "Diagnoosi",
     "diagnosis.body":
-      "[TÄYDENNETÄÄN: sappitiesyöpä (kolangiokarsinooma) selkokielellä ja Tuomaksen tilanne. Tiedot tarkistetaan Tuomakselta.]",
+      "Tuomaksella on edennyt sappitiesyöpä (kolangiokarsinooma). Se löytyi vatsakipujen syytä tutkittaessa. Hoitona on ollut sisplatiini-gemsitabiini-solunsalpaajahoito (Cis-Gem), jonka tavoitteena on hidastaa tautia. Geenitutkimuksessa löytyi FGFR2::BICC1-geenifuusio. Tuomaksen vointi on ollut hyvä.",
 
     "treatment.heading": "Hoito Saksassa",
     "treatment.body":
@@ -157,7 +157,7 @@ export const content = Object.freeze({
 
     "diagnosis.heading": "Diagnosis",
     "diagnosis.body":
-      "[TO BE ADDED: bile duct cancer (cholangiocarcinoma) in plain language and Tuomas' situation. To be verified with Tuomas.]",
+      "Tuomas has advanced bile duct cancer (cholangiocarcinoma). It was found while the cause of his abdominal pain was being investigated. His treatment has been cisplatin and gemcitabine chemotherapy (Cis-Gem), which aims to slow the disease. A gene test found an FGFR2::BICC1 gene fusion. His condition has been good.",
 
     "treatment.heading": "Treatment in Germany",
     "treatment.body":
