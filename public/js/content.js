@@ -47,9 +47,10 @@ export const content = Object.freeze({
       "Ilta-Sanomat: miksi Suomessa käytetään alle puolta syöpähoidoista",
 
     "status.heading": "Tilanne nyt",
-    "status.body": "[TÄYDENNETÄÄN: lyhyt ajankohtainen päivitys.]",
+    "status.body":
+      "Tilanne stabiili. Sytostaattihoito gemsitabiinilla menossa. Pieniä kasvamisen merkkejä pääkasvaimessa ja satelliittipesäkkeen kasvua. Yhdessä imusolmukkeessa mahdollinen etäpesäke. Seuraava TT-kuvaus 2.11.2026.",
     "status.updatedLabel": "Päivitetty",
-    "status.updatedDate": "[pp.kk.vvvv]",
+    "status.updatedDate": "15.10.2026",
 
     "story.tabDiagnosis": "Diagnoosi",
     "story.tabTreatment": "Hoito Saksassa",
@@ -167,9 +168,10 @@ export const content = Object.freeze({
       "Ilta-Sanomat (in Finnish): why fewer than half of cancer treatments are used in Finland",
 
     "status.heading": "Current status",
-    "status.body": "[TO BE ADDED: a short current update.]",
+    "status.body":
+      "The situation is stable. Chemotherapy with gemcitabine is under way. There are small signs of growth in the main tumour and growth of a satellite lesion. One lymph node may contain a metastasis. The next CT scan is on 2.11.2026.",
     "status.updatedLabel": "Updated",
-    "status.updatedDate": "[dd.mm.yyyy]",
+    "status.updatedDate": "15.10.2026",
 
     "story.tabDiagnosis": "Diagnosis",
     "story.tabTreatment": "Treatment",
