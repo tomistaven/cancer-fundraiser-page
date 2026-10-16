@@ -205,6 +205,9 @@ main {
   font: inherit;
   font-size: 0.875rem;
   font-weight: 600;
+  /* The share menu wrapper can shrink in the title row, which would wrap
+     "Jaa sivu" onto two lines and turn the pill into a circle. */
+  white-space: nowrap;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(28, 43, 34, 0.05);
   transition:
@@ -403,8 +406,10 @@ main {
   flex-wrap: wrap;
 }
 
+/* The hero grid has no row gap (the desktop columns don't need one), so
+   the stacked photo needs its own space below the buttons. */
 .hero-media {
-  margin: 0;
+  margin: var(--space-3) 0 0;
 }
 
 /* Without an href the article button stays inert until the URL is known. */
@@ -1171,6 +1176,10 @@ a.button:not([href]) {
 
   .hero-title-row {
     grid-column: 1 / -1;
+  }
+
+  .hero-media {
+    margin-top: 0;
   }
 
   .story-arrows {

@@ -139,6 +139,7 @@ export const content = Object.freeze({
     "footer.updatedDate": "16.10.2026",
     "footer.iconCredit": "Healing heart icons created by Slamlabs - Flaticon",
     "footer.iconCreditTitle": "healing heart icons",
+    "footer.siteCredit": "Sivuston toteutus: Tomi Stavén",
   }),
 
   en: Object.freeze({
@@ -279,5 +280,6 @@ export const content = Object.freeze({
     "footer.updatedDate": "16.10.2026",
     "footer.iconCredit": "Healing heart icons created by Slamlabs - Flaticon",
     "footer.iconCreditTitle": "healing heart icons",
+    "footer.siteCredit": "Website by Tomi Stavén",
   }),
 });
