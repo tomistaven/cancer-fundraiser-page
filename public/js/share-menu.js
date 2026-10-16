@@ -1,8 +1,8 @@
 import { ShareTargets } from "./share-targets.js";
 
 /**
- * A disclosure menu of share options: copy link, service links, print, and
- * the device's own share sheet where the browser has one.
+ * A disclosure menu of share options: copy link, service links, and the
+ * device's own share sheet where the browser has one.
  */
 export class ShareMenu {
   static #COPIED_KEY = "share.copied";
@@ -70,10 +70,6 @@ export class ShareMenu {
     switch (item.dataset.shareAction) {
       case "copy":
         this.#copy();
-        return;
-      case "print":
-        this.#close();
-        window.print();
         return;
       case "native":
         this.#close();

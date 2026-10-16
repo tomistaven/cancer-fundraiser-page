@@ -35,7 +35,7 @@ export class I18n {
   }
 
   /**
-   * @param {string} key Content key, e.g. `form.submit`.
+   * @param {string} key Content key, e.g. `hero.title`.
    * @returns {string} The text in the current language, or the key itself if
    *   it is missing.
    */
