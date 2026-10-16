@@ -137,6 +137,8 @@ export const content = Object.freeze({
       "Sivusto ei käytä lomakkeita, evästeitä, analytiikkaa eikä tietokantoja. Maksun viestiä varten kirjoittamasi nimi ja Instagram-käyttäjänimi eivät lähde selaimestasi. Tuomas näkee tietosi vain tiliotteellaan ja käyttää Instagram-käyttäjänimeäsi ainoastaan seuraajaksi hyväksymiseen. Sivuston palvelin, Googlen Firebase Hosting, käsittelee kävijöiden IP-osoitteita väärinkäytösten estämiseksi ja käyttötilastoja varten ja säilyttää niitä Googlen mukaan muutaman kuukauden.",
     "footer.updatedLabel": "Sivu päivitetty",
     "footer.updatedDate": "15.10.2026",
+    "footer.iconCredit": "Healing heart icons created by Slamlabs - Flaticon",
+    "footer.iconCreditTitle": "healing heart icons",
   }),
 
   en: Object.freeze({
@@ -275,5 +277,7 @@ export const content = Object.freeze({
       "This site uses no forms, cookies, analytics or databases. The name and Instagram username you type for the payment message never leave your browser. Tuomas sees your details only on his bank statement and uses your Instagram username solely to approve your follow request. The site's server, Google's Firebase Hosting, processes visitors' IP addresses to prevent abuse and for usage statistics, and according to Google keeps them for a few months.",
     "footer.updatedLabel": "Page updated",
     "footer.updatedDate": "15.10.2026",
+    "footer.iconCredit": "Healing heart icons created by Slamlabs - Flaticon",
+    "footer.iconCreditTitle": "healing heart icons",
   }),
 });

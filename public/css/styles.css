@@ -1013,6 +1013,17 @@ a.button:not([href]) {
   font-size: 0.875rem;
 }
 
+.credit {
+  margin: 0.5rem 0 0;
+  font-size: 0.8125rem;
+}
+
+/* Muted like the rest of the line, so the credit doesn't compete with the
+   page's own links. */
+.site-footer .credit a {
+  color: inherit;
+}
+
 .footer-organizer h2 {
   font-size: 1.25rem;
 }
