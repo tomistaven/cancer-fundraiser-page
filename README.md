@@ -2,6 +2,8 @@
 
 Bilingual (Finnish / English) single-page website that collects support for Tuomas Lappalainen's cancer treatment in Germany.
 
+**Live site:** [tuomaksensyopamatkassa.blog](https://tuomaksensyopamatkassa.blog)
+
 ---
 
 ## Table of Contents
@@ -120,7 +122,7 @@ The page is at `http://localhost:5000`. The copy buttons need a secure context, 
 ### Lint and format
 
 ```bash
-npx eslint .
+npm run lint
 npm run format
 ```
 
